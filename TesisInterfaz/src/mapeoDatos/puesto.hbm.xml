@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+     <class name="encapsulacion.cargo" schema="pribantsa" table="puesto_trabajo">
+          <id name="id" column="id_puesto_trabajo">
+            <generator class="sequence">
+             <param name="sequence">pribantsa.puesto_trabajo_idpuestotrabajo_seq</param> 
+            </generator>
+          </id>
+     <property name="nombre" column="nombre" type="string"/>
+     <property name="descripcion" column="descripcion" type="string"/>
+     <property name="salMin" column="salario_min" type="double"/>
+     <property name="salMax" column="salario_max" type="double"/>
+     
+     <list name="funciones" table="objetivo" lazy="false" cascade="all-delete-orphan">
+            <key>
+                <column name="idpuesto_trabajo"/>
+            </key>
+            <list-index>
+             <column name="idx"/>
+            </list-index>
+            <one-to-many class="encapsulacion.funcionesCargo"/>
+        </list>
+        
+       <list name="emple" table="empleado" lazy="false" cascade="all">
+            <key>
+                <column name="id_puestotrabajo"/>
+            </key>
+            <list-index>
+             <column name="idx"/>
+            </list-index>
+            <one-to-many class="encapsulacion.empleado"/>
+        </list>  
+                 
+     </class>     
+</hibernate-mapping>
