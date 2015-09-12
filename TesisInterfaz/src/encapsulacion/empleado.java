@@ -8,7 +8,9 @@ package encapsulacion;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  *
@@ -26,14 +28,13 @@ public class empleado {
     private String numCuenta;
     private int edad;
     private String direccion;
-    private List <estudios> estudios=null;
+    private Set <estudios> estudios= new HashSet<estudios>(0);
     private List <experienciaLaboral> exp=null;
     private String Genero;
     private String estCivil;
     private cargo car;
     private departamento dep;
     private double salario;
-    private int idx;//modificado
 
     public empleado() {  //contructor por defecto que utiliza Hibernate
     }                        
@@ -71,14 +72,7 @@ public class empleado {
         this.exp = exp;
     }
     
-    public List<estudios> getEstudios() {
-        return estudios;
-    }
-
-    public void setEstudios(List<estudios> estudios) {
-        this.estudios = estudios;
-    }
-
+  
     public String getGenero() {
         return Genero;
     }
@@ -176,12 +170,14 @@ public class empleado {
         this.dep = dep;
     }
 
-    public int getIdx() {
-        return idx;
+    public Set<estudios> getEstudios() {
+        return estudios;
     }
 
-    public void setIdx(int idx) {
-        this.idx = idx;
+    public void setEstudios(Set<estudios> estudios) {
+        this.estudios = estudios;
     }
+    
+   
       
 }

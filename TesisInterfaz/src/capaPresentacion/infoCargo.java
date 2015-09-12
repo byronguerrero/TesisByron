@@ -8,6 +8,7 @@ import encapsulacion.cargo;
 import encapsulacion.funcionesCargo;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import javax.swing.table.DefaultTableModel;
 import logicaNegocio.logicaCargo;
 
@@ -27,21 +28,18 @@ public class infoCargo extends javax.swing.JPanel {
         initComponents();
     }
     
-     public void CargarDepartamento(int id){
+     public void CargarCargo(int id){
       
       logicaCargo c=new logicaCargo();  
       ca=c.buscar(id);
       int iD=ca.getId();
       modOb=(DefaultTableModel)tablaInfo.getModel();
-      List<funcionesCargo> tareasCargo=null;
-      List s1=new ArrayList();
-      s1.add(null);
+      Set<funcionesCargo> tareasCargo;
       
       idInfo.setText(String.valueOf(iD));
       infoNombre.setText(ca.getNombre());
       infoDescripcion.setText(ca.getDescripcion());
        tareasCargo=ca.getFunciones();
-      tareasCargo.removeAll(s1);
        for(funcionesCargo f: tareasCargo) {     
           modOb.addRow(new Object[]{f.getTarea()});
         }    

@@ -42,7 +42,6 @@ public class empleadoDAO {
     try 
     { 
         iniciaOperacion(); 
-        emp.setIdx(index.idxNext());
         sesion.save(emp); 
         tx.commit();
         sesion.close();
