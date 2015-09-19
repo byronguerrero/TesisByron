@@ -31,7 +31,7 @@ public class AdmDescuentos extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel4 = new javax.swing.JLabel();
-        comboEmp = new javax.swing.JComboBox();
+        comboDep = new javax.swing.JComboBox();
         jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -48,13 +48,15 @@ public class AdmDescuentos extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         motiveDesc = new javax.swing.JTextArea();
         saveDesc = new javax.swing.JButton();
+        comboEmp = new javax.swing.JComboBox();
+        jLabel10 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setText("Selecionar Empleado:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 20, -1, -1));
+        jLabel4.setText("Departamento:");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 24, -1, -1));
 
-        add(comboEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 16, 238, -1));
+        add(comboDep, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 21, 238, -1));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Informacion General", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION));
 
@@ -189,6 +191,11 @@ public class AdmDescuentos extends javax.swing.JPanel {
             }
         });
         add(saveDesc, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 540, -1, -1));
+
+        add(comboEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 21, 310, -1));
+
+        jLabel10.setText("Empleado:");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 24, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void saveDescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveDescActionPerformed
@@ -201,9 +208,11 @@ public class AdmDescuentos extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox comboDep;
     private javax.swing.JComboBox comboEmp;
     private datechooser.beans.DateChooserCombo dateDescuento;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

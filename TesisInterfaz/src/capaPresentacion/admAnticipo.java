@@ -181,7 +181,7 @@ public class admAnticipo extends javax.swing.JPanel {
         add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 24, -1, -1));
 
         comboEmp.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(comboEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 21, 238, -1));
+        add(comboEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 21, 310, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void guardarAnticipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarAnticipoActionPerformed

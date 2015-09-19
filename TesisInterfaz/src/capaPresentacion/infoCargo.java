@@ -6,8 +6,6 @@ package capaPresentacion;
 
 import encapsulacion.cargo;
 import encapsulacion.funcionesCargo;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 import javax.swing.table.DefaultTableModel;
 import logicaNegocio.logicaCargo;
@@ -119,7 +117,7 @@ public class infoCargo extends javax.swing.JPanel {
                                 .addGap(57, 57, 57)
                                 .addComponent(idInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(116, 116, 116)
+                        .addGap(101, 101, 101)
                         .addComponent(jLabel5))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()

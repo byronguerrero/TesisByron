@@ -6,6 +6,8 @@
 
 package capaPresentacion;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author byron
@@ -39,17 +41,17 @@ public class admPermisos extends javax.swing.JPanel {
         comboDep = new javax.swing.JComboBox();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
+        txtDesc = new javax.swing.JTextPane();
         jPanel4 = new javax.swing.JPanel();
         jCheckBox5 = new javax.swing.JCheckBox();
         jLabel9 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jCheckBox6 = new javax.swing.JCheckBox();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        radioHoras = new javax.swing.JRadioButton();
+        radioDias = new javax.swing.JRadioButton();
+        dateSolicitud = new datechooser.beans.DateChooserCombo();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
@@ -111,7 +113,7 @@ public class admPermisos extends javax.swing.JPanel {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Descripcion del Permiso", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION));
 
-        jScrollPane1.setViewportView(jTextPane1);
+        jScrollPane1.setViewportView(txtDesc);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -133,77 +135,37 @@ public class admPermisos extends javax.swing.JPanel {
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 220, 540, 110));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Solicitud de Permiso", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jCheckBox5.setText("Remunerado");
+        jPanel4.add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 185, -1, -1));
 
         jLabel9.setText("Fecha de Solicitud:");
+        jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
-        jTextField2.setText("                             ");
-
-        jLabel10.setText("Tipo de Permiso");
+        jLabel10.setText("Tipo de Permiso:");
+        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
         jLabel11.setText("Fecha Inicio fin:");
+        jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 143, -1, -1));
+        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 215, -1, -1));
 
         jCheckBox6.setText("Documentos de Justificacion de Permiso");
+        jPanel4.add(jCheckBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 233, -1, -1));
 
-        jRadioButton1.setText("Horas");
+        radioHoras.setText("Horas");
+        jPanel4.add(radioHoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 66, -1, -1));
 
-        jRadioButton2.setText("Dias");
+        radioDias.setText("Dias");
+        jPanel4.add(radioDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 66, -1, -1));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox6)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jCheckBox5))
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel12))
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addGap(37, 37, 37)
-                                        .addComponent(jRadioButton1)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jRadioButton2)))))
-                        .addGap(0, 0, Short.MAX_VALUE))))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
-                .addGap(51, 51, 51)
-                .addComponent(jLabel11)
-                .addGap(27, 27, 27)
-                .addComponent(jCheckBox5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel12)
-                .addGap(18, 18, 18)
-                .addComponent(jCheckBox6)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        dateSolicitud.setCalendarPreferredSize(new java.awt.Dimension(222, 159));
+        try {
+            dateSolicitud.setDefaultPeriods(new datechooser.model.multiple.PeriodSet());
+        } catch (datechooser.model.exeptions.IncompatibleDataExeption e1) {
+            e1.printStackTrace();
+        }
+        jPanel4.add(dateSolicitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 28, 160, -1));
 
         add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 520, 108));
 
@@ -263,14 +225,18 @@ public class admPermisos extends javax.swing.JPanel {
         add(comboBoss, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 478, 250, -1));
 
         comboEmp.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(comboEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(618, 21, 238, -1));
+        add(comboEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(618, 21, 340, -1));
 
         jLabel14.setText("Empleado:");
         add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 24, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        
+        if(comboEmp.getSelectedIndex() != -1 && dateSolicitud.getSelectedDate() != null && 
+                (radioHoras.isSelected() || radioDias.isSelected()) && !txtDesc.getText().isEmpty() && comboBoss.getSelectedIndex() != -1){
+            // CODIGO GUARDAR
+        } else
+            JOptionPane.showMessageDialog(null, "Seleccione un empleado e ingrese fecha, tipo de permiso, descripción de permiso y persona que autoriza", "¡Error!", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_btnSaveActionPerformed
 
 
@@ -279,6 +245,7 @@ public class admPermisos extends javax.swing.JPanel {
     private javax.swing.JComboBox comboBoss;
     private javax.swing.JComboBox comboDep;
     private javax.swing.JComboBox comboEmp;
+    private datechooser.beans.DateChooserCombo dateSolicitud;
     private javax.swing.JCheckBox jCheckBox5;
     private javax.swing.JCheckBox jCheckBox6;
     private javax.swing.JLabel jLabel1;
@@ -300,10 +267,9 @@ public class admPermisos extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JRadioButton radioDias;
+    private javax.swing.JRadioButton radioHoras;
+    private javax.swing.JTextPane txtDesc;
     // End of variables declaration//GEN-END:variables
 }

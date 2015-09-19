@@ -165,7 +165,7 @@ public class admBono extends javax.swing.JPanel {
         add(guardarBono, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 530, -1, -1));
 
         comboEmp.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(comboEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(555, 21, 219, -1));
+        add(comboEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(555, 21, 350, -1));
 
         jLabel9.setText("Empleado:");
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 24, -1, -1));
@@ -173,7 +173,7 @@ public class admBono extends javax.swing.JPanel {
 
     private void guardarBonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarBonoActionPerformed
         if(comboEmp.getSelectedIndex() != -1 && listaBonos.getSelectedIndex() != -1 && dateBono.getSelectedDate() != null){
-            
+            // CODIGO GUARDAR
         } else
             JOptionPane.showMessageDialog(null, "Seleccione un empleado, un bono y una fecha", "¡Error!", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_guardarBonoActionPerformed

@@ -309,11 +309,11 @@ public class crearEmpleado extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Datos Generales", jPanel1);
 
-        jLabel16.setText("Intitucion:");
+        jLabel16.setText("Intitución:");
 
         jLabel17.setText("NIvel de Estudio");
 
-        jLabel18.setText("Titulo Obtenido:");
+        jLabel18.setText("Título Obtenido:");
 
         nomInstitucion.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -635,92 +635,95 @@ public class crearEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
     
     private void guardarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarEmpleadoActionPerformed
-        // TODO add your handling code here:
+        if(!nombEmpleado.getText().isEmpty() && !apellEmpleado.getText().isEmpty() && !duiEmpleado.getText().isEmpty() && !isss.getText().isEmpty()
+                && !afp.getText().isEmpty() && !nitEmpleado.getText().isEmpty() && !domicilio.getText().isEmpty() && !edadEmpleado.getText().isEmpty()
+                && !numCuenta.getText().isEmpty() && tablaEstudios.getRowCount() != 0 && comboCargo.getSelectedIndex() != -1 && !salarioEmpleado.getText().isEmpty()){
      
-        empleado emp=new empleado();
-        estudios es=new estudios();
-        @SuppressWarnings("UnusedAssignment")
-        departamento depempleado=new departamento();
-        @SuppressWarnings("UnusedAssignment")
-        cargo cargoempleado=new cargo();
-        experienciaLaboral exp=new experienciaLaboral();
-        modeloComboDep = new DefaultComboBoxModel();
-        int id;
-        mod=(DefaultTableModel) tablaEstudios.getModel();
-        modEx=(DefaultTableModel) tablaExperiencia.getModel();
-        Set <estudios> empleadoEstudio=new HashSet<estudios>();
-        List<experienciaLaboral> experiencia=new ArrayList<>();
-        String fecha;
-        
-        try{
-         
-        emp.setNombre(nombEmpleado.getText());
-        emp.setApellido(apellEmpleado.getText());
-        emp.setEdad(Integer.parseInt(edadEmpleado.getText()));
-        emp.setDui(duiEmpleado.getText());
-        emp.setAfp(afp.getText());
-        emp.setIsss(isss.getText());
-        emp.setDireccion(domicilio.getText());
-        emp.setNit(nitEmpleado.getText());
-        emp.setSalario(Double.parseDouble(salarioEmpleado.getText()));
-        departamento depId=(departamento)comboDepart.getSelectedItem();
-        depempleado=logicaDep.buscar(depId.getId());
-            System.out.println(depId.getId()+"departamento id");
-        emp.setDep(depempleado);
-        id=0;
-        cargo cargoId=(cargo)comboCargo.getSelectedItem();
-        cargoempleado=logCar.buscar(cargoId.getId());
-            System.out.println(cargoId.getId()+"cargo id");
-        emp.setCar(cargoempleado);
-       // emp.setIdx(1);
-        
-        //emp.setCargo(comboCargo.getSelectedItem().toString());
-       // emp.setDepartamento(comboDepart.getSelectedItem().toString());
-       
-        emp.setNumCuenta(numCuenta.getText());
-        emp.setEstCivil(estcivilcombo.getSelectedItem().toString());
-        emp.setGenero(generocombo.getSelectedItem().toString());
-        
-        for(int fila=0;fila<mod.getRowCount();fila++){
-                es.setNivel(mod.getValueAt(fila,0).toString());
-                es.setTitulo(mod.getValueAt(fila,1).toString());
-                fecha=mod.getValueAt(fila,2).toString();
-                SimpleDateFormat formatoFecha=new SimpleDateFormat("MM/dd/yyyy");
-                es.setFecha(formatoFecha.parse(fecha));
-                es.setLugar(mod.getValueAt(fila,3).toString());
-                es.setInstitucion(mod.getValueAt(fila,4).toString());
-                empleadoEstudio.add(es);
-        }
-        
-        emp.setEstudios(empleadoEstudio);
-        
-        for(int fila=0;fila<modEx.getRowCount();fila++){
-        
-            exp.setLugar(modEx.getValueAt(fila,0).toString());
-            exp.setCargo(modEx.getValueAt(fila,1).toString());
-            exp.setTiempo(modEx.getValueAt(fila,2).toString());
-            experiencia.add(exp);
-        }
-        
-        emp.setExp(experiencia);
-        
-       logicaEmp.validar(emp);
-       logicaEmp.agregarEmpleado(emp);        
-       
+            empleado emp=new empleado();
+            estudios es=new estudios();
+            @SuppressWarnings("UnusedAssignment")
+            departamento depempleado=new departamento();
+            @SuppressWarnings("UnusedAssignment")
+            cargo cargoempleado=new cargo();
+            experienciaLaboral exp=new experienciaLaboral();
+            modeloComboDep = new DefaultComboBoxModel();
+            int id;
+            mod=(DefaultTableModel) tablaEstudios.getModel();
+            modEx=(DefaultTableModel) tablaExperiencia.getModel();
+            Set <estudios> empleadoEstudio=new HashSet<estudios>();
+            List<experienciaLaboral> experiencia=new ArrayList<>();
+            String fecha;
+
+            try{
+
+                emp.setNombre(nombEmpleado.getText());
+                emp.setApellido(apellEmpleado.getText());
+                emp.setEdad(Integer.parseInt(edadEmpleado.getText()));
+                emp.setDui(duiEmpleado.getText());
+                emp.setAfp(afp.getText());
+                emp.setIsss(isss.getText());
+                emp.setDireccion(domicilio.getText());
+                emp.setNit(nitEmpleado.getText());
+                emp.setSalario(Double.parseDouble(salarioEmpleado.getText()));
+                departamento depId=(departamento)comboDepart.getSelectedItem();
+                depempleado=logicaDep.buscar(depId.getId());
+                    System.out.println(depId.getId()+"departamento id");
+                emp.setDep(depempleado);
+                id=0;
+                cargo cargoId=(cargo)comboCargo.getSelectedItem();
+                cargoempleado=logCar.buscar(cargoId.getId());
+                    System.out.println(cargoId.getId()+"cargo id");
+                emp.setCar(cargoempleado);
+               // emp.setIdx(1);
+
+                //emp.setCargo(comboCargo.getSelectedItem().toString());
+               // emp.setDepartamento(comboDepart.getSelectedItem().toString());
+
+                emp.setNumCuenta(numCuenta.getText());
+                emp.setEstCivil(estcivilcombo.getSelectedItem().toString());
+                emp.setGenero(generocombo.getSelectedItem().toString());
+
+                for(int fila=0;fila<mod.getRowCount();fila++){
+                        es.setNivel(mod.getValueAt(fila,0).toString());
+                        es.setTitulo(mod.getValueAt(fila,1).toString());
+                        fecha=mod.getValueAt(fila,2).toString();
+                        SimpleDateFormat formatoFecha=new SimpleDateFormat("MM/dd/yyyy");
+                        es.setFecha(formatoFecha.parse(fecha));
+                        es.setLugar(mod.getValueAt(fila,3).toString());
+                        es.setInstitucion(mod.getValueAt(fila,4).toString());
+                        empleadoEstudio.add(es);
+                }
+
+                emp.setEstudios(empleadoEstudio);
+
+                for(int fila=0;fila<modEx.getRowCount();fila++){
+
+                    exp.setLugar(modEx.getValueAt(fila,0).toString());
+                    exp.setCargo(modEx.getValueAt(fila,1).toString());
+                    exp.setTiempo(modEx.getValueAt(fila,2).toString());
+                    experiencia.add(exp);
+                }
+
+                emp.setExp(experiencia);
+
+                logicaEmp.validar(emp);
+                logicaEmp.agregarEmpleado(emp);        
+
             }catch(NumberFormatException a){
-                
+
                 JOptionPane.showMessageDialog(null,"Tipo de Datos","¡Error!",JOptionPane.ERROR_MESSAGE);
-        
+
             }catch(exceptionClass ex) {
-            
+
                 JOptionPane.showMessageDialog(null,ex.getError(),"¡Error!",JOptionPane.ERROR_MESSAGE);
-           
+
             } catch (ParseException ex) {
-            
+
                  JOptionPane.showMessageDialog(null,"Datos de Fecha","¡Error!",JOptionPane.ERROR_MESSAGE);
-       
+
             }
-      
+        } else
+            JOptionPane.showMessageDialog(null, "Ingrese datos generales, al menos 1 estudio e informacion de puesto de trabajo", "¡Error!", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_guardarEmpleadoActionPerformed
 
     private void agregarEstudiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarEstudiosActionPerformed

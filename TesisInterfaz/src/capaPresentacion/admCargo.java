@@ -265,7 +265,7 @@ public class admCargo extends javax.swing.JPanel {
 
     private void buscarCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarCargoActionPerformed
         if(!puestoTxt.getText().isEmpty()){
-            
+            // CODIGO BUSQUEDA
         } else
             JOptionPane.showMessageDialog(null,"Ingrese un texto de búsqueda","¡Error!",JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_buscarCargoActionPerformed

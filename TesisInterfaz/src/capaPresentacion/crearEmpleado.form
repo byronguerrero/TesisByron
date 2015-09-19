@@ -484,7 +484,7 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel16">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Intitucion:"/>
+                    <Property name="text" type="java.lang.String" value="Intituci&#xf3;n:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel17">
@@ -494,7 +494,7 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel18">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Titulo Obtenido:"/>
+                    <Property name="text" type="java.lang.String" value="T&#xed;tulo Obtenido:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="nomInstitucion">

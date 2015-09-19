@@ -65,7 +65,7 @@ public class crearDepart extends javax.swing.JFrame {
 
         jLabel2.setText("Nombre del Departamento");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 23, -1, -1));
-        jPanel1.add(nomDep, new org.netbeans.lib.awtextra.AbsoluteConstraints(191, 20, 205, -1));
+        jPanel1.add(nomDep, new org.netbeans.lib.awtextra.AbsoluteConstraints(191, 20, 260, -1));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Objetivos"));
 
@@ -221,6 +221,7 @@ public class crearDepart extends javax.swing.JFrame {
 
     private void agregarDepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarDepartamentoActionPerformed
         modOb=(DefaultTableModel)tablaObje.getModel();
+        
         if(!nomDep.getText().isEmpty() && modOb.getRowCount() > 0){
             departamento dep=new departamento();
 

@@ -4,16 +4,12 @@
  */
 package capaPresentacion;
 
-import encapsulacion.cargo;
 import encapsulacion.departamento;
 import encapsulacion.empleado;
 import encapsulacion.objetivos;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 import javax.swing.table.DefaultTableModel;
 import logicaNegocio.logicaDepartamento;
-import org.hibernate.Hibernate;
 
 /**
  *
