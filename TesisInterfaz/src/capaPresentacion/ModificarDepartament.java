@@ -67,7 +67,7 @@ public class ModificarDepartament extends javax.swing.JFrame {
 
         jLabel2.setText("Nombre del Departamento");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 23, -1, -1));
-        jPanel1.add(nomDep, new org.netbeans.lib.awtextra.AbsoluteConstraints(191, 22, 105, -1));
+        jPanel1.add(nomDep, new org.netbeans.lib.awtextra.AbsoluteConstraints(191, 22, 180, -1));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Objetivos"));
 
@@ -297,7 +297,7 @@ public class ModificarDepartament extends javax.swing.JFrame {
     private void actualizarDepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarDepartamentoActionPerformed
         modOb=(DefaultTableModel)tablaObje.getModel();
         
-        if(modOb.getRowCount() != 0){
+        if(modOb.getRowCount() != 0 && !nomDep.getText().isEmpty()){
         
             logicaDepartamento logDep= new logicaDepartamento();
             departamento dep=new departamento();
