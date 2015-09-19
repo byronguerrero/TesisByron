@@ -7,7 +7,6 @@
 package capaPresentacion;
 
 import encapsulacion.departamento;
-import encapsulacion.objetivos;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -69,6 +68,7 @@ public class AdmDepartamentos extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tablaDepartamento);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administracion de Departamentos", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("AvantGarde LT Medium", 0, 12))); // NOI18N
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         agregarDepartamento.setText("Agregar");
         agregarDepartamento.addActionListener(new java.awt.event.ActionListener() {
@@ -76,6 +76,7 @@ public class AdmDepartamentos extends javax.swing.JPanel {
                 agregarDepartamentoActionPerformed(evt);
             }
         });
+        jPanel1.add(agregarDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 29, -1, -1));
 
         modicarDepartamento.setText("Modificar ");
         modicarDepartamento.addActionListener(new java.awt.event.ActionListener() {
@@ -83,6 +84,7 @@ public class AdmDepartamentos extends javax.swing.JPanel {
                 modicarDepartamentoActionPerformed(evt);
             }
         });
+        jPanel1.add(modicarDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, -1, -1));
 
         eliminarDep.setText("Eliminar");
         eliminarDep.addActionListener(new java.awt.event.ActionListener() {
@@ -90,42 +92,15 @@ public class AdmDepartamentos extends javax.swing.JPanel {
                 eliminarDepActionPerformed(evt);
             }
         });
+        jPanel1.add(eliminarDep, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, -1, -1));
 
-        actualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Refresh_Icon.png"))); // NOI18N
+        actualizar.setText("Actualizar");
         actualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 actualizarActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(agregarDepartamento)
-                .addGap(29, 29, 29)
-                .addComponent(modicarDepartamento)
-                .addGap(32, 32, 32)
-                .addComponent(eliminarDep)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(agregarDepartamento)
-                    .addComponent(modicarDepartamento)
-                    .addComponent(eliminarDep))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(actualizar)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        jPanel1.add(actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, -1, -1));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Buscar Derpartamento", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("AvantGarde LT Medium", 0, 12))); // NOI18N
 
@@ -154,7 +129,7 @@ public class AdmDepartamentos extends javax.swing.JPanel {
                     .addComponent(jLabel2)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton5))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Detalles de Departamento", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("AvantGarde LT Medium", 0, 12))); // NOI18N
@@ -193,10 +168,10 @@ public class AdmDepartamentos extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(14, 14, 14)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

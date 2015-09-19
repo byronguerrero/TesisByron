@@ -54,7 +54,7 @@ public class crearCargo extends javax.swing.JFrame {
         salmin = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         salmax = new javax.swing.JTextField();
-        GuardarCargo = new javax.swing.JButton();
+        guardarCargo = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -118,8 +118,7 @@ public class crearCargo extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(cargoFuncion, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(agregarObj)
-                        .addGap(11, 11, 11)))
+                        .addComponent(agregarObj)))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -188,10 +187,10 @@ public class crearCargo extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        GuardarCargo.setText("Guardar");
-        GuardarCargo.addActionListener(new java.awt.event.ActionListener() {
+        guardarCargo.setText("Guardar");
+        guardarCargo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GuardarCargoActionPerformed(evt);
+                guardarCargoActionPerformed(evt);
             }
         });
 
@@ -210,7 +209,7 @@ public class crearCargo extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(170, 170, 170)
-                        .addComponent(GuardarCargo)
+                        .addComponent(guardarCargo)
                         .addGap(47, 47, 47)
                         .addComponent(jButton2))
                     .addGroup(layout.createSequentialGroup()
@@ -225,7 +224,7 @@ public class crearCargo extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(GuardarCargo)
+                    .addComponent(guardarCargo)
                     .addComponent(jButton2))
                 .addContainerGap())
         );
@@ -239,40 +238,44 @@ public class crearCargo extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void agregarObjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarObjActionPerformed
-        // TODO add your handling code here:
-        modOb=(DefaultTableModel)tablaFunciones.getModel();
-        modOb.addRow(new Object[]{cargoFuncion.getText()});
-        cargoFuncion.setText("");
-        
+        if(!cargoFuncion.getText().isEmpty()){
+            modOb=(DefaultTableModel)tablaFunciones.getModel();
+            modOb.addRow(new Object[]{cargoFuncion.getText()});
+            cargoFuncion.setText("");
+        } else
+            JOptionPane.showMessageDialog(null,"Ingrese función","¡Error!",JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_agregarObjActionPerformed
 
-    private void GuardarCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarCargoActionPerformed
-        // TODO add your handling code here:
-        cargo puesto=new cargo();
-        logicaCargo logDep= new logicaCargo();
-        List<funcionesCargo> funcionCargo=new ArrayList<>();
+    private void guardarCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarCargoActionPerformed
         modOb=(DefaultTableModel)tablaFunciones.getModel();
-  
-        try{
+        
+        if(modOb.getRowCount() > 0 && !salmin.getText().isEmpty() && !salmax.getText().isEmpty() && !nombreCargo.getText().isEmpty()){
+            cargo puesto=new cargo();
+            logicaCargo logDep= new logicaCargo();
+            List<funcionesCargo> funcionCargo=new ArrayList<>();
 
-            puesto.setNombre(nombreCargo.getText());
-            puesto.setDescripcion(desCargo.getText());
-            puesto.setSalMin(Double.parseDouble(salmin.getText()));
-            puesto.setSalMax(Double.parseDouble(salmax.getText()));
+            try{
 
-            for(int fila=0;fila<modOb.getRowCount();fila++){ //recorro las filas
-                funcionesCargo funcion=new funcionesCargo();
-                funcion.setTarea(modOb.getValueAt(fila,0).toString());
-                funcionCargo.add(funcion);
+                puesto.setNombre(nombreCargo.getText());
+                puesto.setDescripcion(desCargo.getText());
+                puesto.setSalMin(Double.parseDouble(salmin.getText()));
+                puesto.setSalMax(Double.parseDouble(salmax.getText()));
+
+                for(int fila=0;fila<modOb.getRowCount();fila++){ //recorro las filas
+                    funcionesCargo funcion=new funcionesCargo();
+                    funcion.setTarea(modOb.getValueAt(fila,0).toString());
+                    funcionCargo.add(funcion);
+                }
+                puesto.setFunciones(funcionCargo);
+                logDep.validar(puesto);
+                logDep.agregarDepartamento(puesto);
+
+            } catch(exceptionClass ex){
+                JOptionPane.showMessageDialog(null,ex.getError(),"!Error¡",JOptionPane.ERROR_MESSAGE);
             }
-            puesto.setFunciones(funcionCargo);
-            logDep.validar(puesto);
-            logDep.agregarDepartamento(puesto);
-
-        }catch(exceptionClass ex){
-            JOptionPane.showMessageDialog(null,ex.getError(),"!Error¡",JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_GuardarCargoActionPerformed
+        } else
+            JOptionPane.showMessageDialog(null,"Ingrese nombre de cargo, salario máximo, salario mínimo y al menos una función","¡Error!",JOptionPane.ERROR_MESSAGE);
+    }//GEN-LAST:event_guardarCargoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -310,10 +313,10 @@ public class crearCargo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton GuardarCargo;
     private javax.swing.JButton agregarObj;
     private javax.swing.JTextField cargoFuncion;
     private javax.swing.JTextArea desCargo;
+    private javax.swing.JButton guardarCargo;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -6,6 +6,8 @@
 
 package capaPresentacion;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author byron
@@ -31,27 +33,27 @@ public class AdmSalarios extends javax.swing.JPanel {
 
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
+        comboSalarios = new javax.swing.JList();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnMod = new javax.swing.JButton();
+        btnNew = new javax.swing.JButton();
+        btnDel = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
-        jList1.setModel(new javax.swing.AbstractListModel() {
+        comboSalarios.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
-        jList1.addMouseListener(new java.awt.event.MouseAdapter() {
+        comboSalarios.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jList1MouseClicked(evt);
+                comboSalariosMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(comboSalarios);
 
         jLabel1.setText("Salary List Template");
 
@@ -72,11 +74,21 @@ public class AdmSalarios extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jButton2.setText("Modificar");
+        btnMod.setText("Modificar");
+        btnMod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Nueva");
+        btnNew.setText("Nueva");
 
-        jButton4.setText("Eliminar");
+        btnDel.setText("Eliminar");
+        btnDel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -84,11 +96,11 @@ public class AdmSalarios extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(49, 49, 49)
-                .addComponent(jButton2)
+                .addComponent(btnMod)
                 .addGap(40, 40, 40)
-                .addComponent(jButton3)
+                .addComponent(btnNew)
                 .addGap(36, 36, 36)
-                .addComponent(jButton4)
+                .addComponent(btnDel)
                 .addContainerGap(93, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -96,9 +108,9 @@ public class AdmSalarios extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(btnMod)
+                    .addComponent(btnNew)
+                    .addComponent(btnDel))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
@@ -130,7 +142,7 @@ public class AdmSalarios extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
+    private void comboSalariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comboSalariosMouseClicked
         // TODO add your handling code here:
           r=new salarioPanel();
         jPanel1.removeAll();
@@ -139,16 +151,30 @@ public class AdmSalarios extends javax.swing.JPanel {
         jPanel1.setLayout(new java.awt.BorderLayout());
         jPanel1.add(r);
         jPanel1.revalidate();
-    }//GEN-LAST:event_jList1MouseClicked
+    }//GEN-LAST:event_comboSalariosMouseClicked
+
+    private void btnModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModActionPerformed
+        if(comboSalarios.getSelectedIndex() != -1){
+            // CODIGO MODIFICAR
+        } else
+            JOptionPane.showMessageDialog(null, "Seleccion un salario", "¡Error!", JOptionPane.ERROR_MESSAGE);
+    }//GEN-LAST:event_btnModActionPerformed
+
+    private void btnDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelActionPerformed
+        if(comboSalarios.getSelectedIndex() != -1){
+            // CODIGO ELIMINAR
+        } else
+            JOptionPane.showMessageDialog(null, "Seleccion un salario", "¡Error!", JOptionPane.ERROR_MESSAGE);
+    }//GEN-LAST:event_btnDelActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDel;
+    private javax.swing.JButton btnMod;
+    private javax.swing.JButton btnNew;
+    private javax.swing.JList comboSalarios;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JList jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

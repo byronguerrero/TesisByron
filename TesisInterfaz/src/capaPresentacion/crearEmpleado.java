@@ -20,7 +20,6 @@ import logicaNegocio.exceptionClass;
 import logicaNegocio.logicaEmpleados;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.JComboBox;
 import logicaNegocio.logicaCargo;
 import logicaNegocio.logicaDepartamento;
 
@@ -90,7 +89,6 @@ public class crearEmpleado extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         generocombo = new javax.swing.JComboBox();
         jLabel15 = new javax.swing.JLabel();
-        edadEmpleado = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         duiEmpleado = new javax.swing.JFormattedTextField();
         nitEmpleado = new javax.swing.JFormattedTextField();
@@ -98,6 +96,7 @@ public class crearEmpleado extends javax.swing.JFrame {
         numCuenta = new javax.swing.JFormattedTextField();
         afp = new javax.swing.JFormattedTextField();
         isss = new javax.swing.JFormattedTextField();
+        edadEmpleado = new javax.swing.JFormattedTextField();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
@@ -131,7 +130,7 @@ public class crearEmpleado extends javax.swing.JFrame {
         comboCargo = new javax.swing.JComboBox();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
-        salarioEmpleado = new javax.swing.JTextField();
+        salarioEmpleado = new javax.swing.JFormattedTextField();
         guardarEmpleado = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
 
@@ -195,6 +194,8 @@ public class crearEmpleado extends javax.swing.JFrame {
             ex.printStackTrace();
         }
 
+        edadEmpleado.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -216,7 +217,7 @@ public class crearEmpleado extends javax.swing.JFrame {
                                     .addComponent(generocombo, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(estcivilcombo, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(domicilio, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(67, Short.MAX_VALUE))
+                        .addContainerGap(15, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -229,7 +230,7 @@ public class crearEmpleado extends javax.swing.JFrame {
                                 .addComponent(nombEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel15)
-                                .addGap(23, 23, 23)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(edadEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel5)
@@ -248,7 +249,7 @@ public class crearEmpleado extends javax.swing.JFrame {
                                             .addComponent(isss, javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(afp, javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(duiEmpleado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE))
-                                        .addGap(18, 18, 18)
+                                        .addGap(30, 30, 30)
                                         .addComponent(jLabel11)))))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
@@ -300,7 +301,7 @@ public class crearEmpleado extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(numCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Datos Generales", jPanel1);
@@ -389,7 +390,7 @@ public class crearEmpleado extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -533,6 +534,8 @@ public class crearEmpleado extends javax.swing.JFrame {
 
         jLabel32.setText("Salario:($)");
 
+        salarioEmpleado.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -541,17 +544,19 @@ public class crearEmpleado extends javax.swing.JFrame {
                 .addGap(66, 66, 66)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(jLabel31)
+                        .addContainerGap(317, Short.MAX_VALUE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel30)
                             .addComponent(jLabel29)
                             .addComponent(jLabel32))
-                        .addGap(29, 29, 29)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(comboDepart, 0, 179, Short.MAX_VALUE)
+                            .addComponent(comboDepart, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(comboCargo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(salarioEmpleado)))
-                    .addComponent(jLabel31))
-                .addContainerGap(156, Short.MAX_VALUE))
+                            .addComponent(salarioEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(99, 99, 99))))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -570,7 +575,7 @@ public class crearEmpleado extends javax.swing.JFrame {
                     .addComponent(salarioEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addComponent(jLabel31)
-                .addContainerGap(210, Short.MAX_VALUE))
+                .addContainerGap(187, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Puesto Trabajo", jPanel7);
@@ -594,7 +599,7 @@ public class crearEmpleado extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(165, 165, 165)
+                .addGap(194, 194, 194)
                 .addComponent(guardarEmpleado)
                 .addGap(18, 18, 18)
                 .addComponent(jButton6)
@@ -631,7 +636,9 @@ public class crearEmpleado extends javax.swing.JFrame {
      
         empleado emp=new empleado();
         estudios es=new estudios();
+        @SuppressWarnings("UnusedAssignment")
         departamento depempleado=new departamento();
+        @SuppressWarnings("UnusedAssignment")
         cargo cargoempleado=new cargo();
         experienciaLaboral exp=new experienciaLaboral();
         modeloComboDep = new DefaultComboBoxModel();
@@ -699,31 +706,28 @@ public class crearEmpleado extends javax.swing.JFrame {
        
             }catch(NumberFormatException a){
                 
-                JOptionPane.showMessageDialog(null,"Tipo de Datos","!Error¡",JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null,"Tipo de Datos","¡Error!",JOptionPane.ERROR_MESSAGE);
         
             }catch(exceptionClass ex) {
             
-                JOptionPane.showMessageDialog(null,ex.getError(),"!Error¡",JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null,ex.getError(),"¡Error!",JOptionPane.ERROR_MESSAGE);
            
             } catch (ParseException ex) {
             
-                 JOptionPane.showMessageDialog(null,"Datos de Fecha","!Error¡",JOptionPane.ERROR_MESSAGE);
+                 JOptionPane.showMessageDialog(null,"Datos de Fecha","¡Error!",JOptionPane.ERROR_MESSAGE);
        
             }
       
     }//GEN-LAST:event_guardarEmpleadoActionPerformed
 
     private void agregarEstudiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarEstudiosActionPerformed
-        // TODO add your handling code here:
         mod=(DefaultTableModel) tablaEstudios.getModel();
-        String nivelEstudio;
-        nivelEstudio=(String)comboEstudio.getSelectedItem();
+        String nivelEstudio=(String)comboEstudio.getSelectedItem();
         mod.addRow(new Object[]{nivelEstudio,tituObtenido.getText(),dateEstudios.getText(),pais.getText(),nomInstitucion.getText()});  
         tituObtenido.setText("");
         pais.setText("");
         nomInstitucion.setText("");
         agregarEstudios.setEnabled(false);
-      
     }//GEN-LAST:event_agregarEstudiosActionPerformed
 
     private void nomInstitucionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nomInstitucionKeyReleased
@@ -799,19 +803,16 @@ public class crearEmpleado extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(crearEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(crearEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(crearEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(crearEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new crearEmpleado().setVisible(true);
             }
@@ -841,7 +842,7 @@ public class crearEmpleado extends javax.swing.JFrame {
     private datechooser.beans.DateChooserCombo dateEstudios;
     private javax.swing.JTextField domicilio;
     private javax.swing.JFormattedTextField duiEmpleado;
-    private javax.swing.JTextField edadEmpleado;
+    private javax.swing.JFormattedTextField edadEmpleado;
     private javax.swing.JComboBox estcivilcombo;
     private javax.swing.JComboBox generocombo;
     private javax.swing.JButton guardarEmpleado;
@@ -886,7 +887,7 @@ public class crearEmpleado extends javax.swing.JFrame {
     private javax.swing.JTextField nombEmpleado;
     private javax.swing.JFormattedTextField numCuenta;
     private javax.swing.JTextField pais;
-    private javax.swing.JTextField salarioEmpleado;
+    private javax.swing.JFormattedTextField salarioEmpleado;
     private javax.swing.JTable tablaEstudios;
     private javax.swing.JTable tablaExperiencia;
     private javax.swing.JTextField tiempoExperiencia;
