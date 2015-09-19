@@ -20,7 +20,7 @@ public class empleadoDAO {
 
     private Session sesion;
     private Transaction tx;
-    idxManager index =new idxManager();
+   // idxManager index =new idxManager();
     
   private void iniciaOperacion() throws HibernateException{
     
