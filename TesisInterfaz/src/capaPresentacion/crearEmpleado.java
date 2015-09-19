@@ -14,12 +14,15 @@ import encapsulacion.experienciaLaboral;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.HashSet;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import logicaNegocio.exceptionClass;
 import logicaNegocio.logicaEmpleados;
 import java.util.List;
+import java.util.Set;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 import logicaNegocio.logicaCargo;
 import logicaNegocio.logicaDepartamento;
 
@@ -38,7 +41,7 @@ public class crearEmpleado extends javax.swing.JFrame {
     logicaCargo logCar=new logicaCargo();
     List s1=new ArrayList();
     List<departamento> dep;
-    List<cargo> carg;
+    Set<cargo> carg;
 
 
     /**
@@ -645,7 +648,7 @@ public class crearEmpleado extends javax.swing.JFrame {
         int id;
         mod=(DefaultTableModel) tablaEstudios.getModel();
         modEx=(DefaultTableModel) tablaExperiencia.getModel();
-        List<estudios> empleadoEstudio=new ArrayList<>();
+        Set <estudios> empleadoEstudio=new HashSet<estudios>();
         List<experienciaLaboral> experiencia=new ArrayList<>();
         String fecha;
         

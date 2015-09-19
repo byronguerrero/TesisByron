@@ -88,7 +88,7 @@ public class admVacaciones extends javax.swing.JPanel {
 
         jLabel8.setText("Dias:");
         jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 32, -1, -1));
-        jPanel4.add(txtDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 29, 190, -1));
+        jPanel4.add(txtDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 29, 190, -1));
 
         jLabel9.setText("Fecha de tramite:");
         jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 71, -1, -1));
@@ -109,7 +109,7 @@ public class admVacaciones extends javax.swing.JPanel {
         } catch (datechooser.model.exeptions.IncompatibleDataExeption e1) {
             e1.printStackTrace();
         }
-        jPanel4.add(dateInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 107, 190, -1));
+        jPanel4.add(dateInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 107, 190, -1));
 
         dateTramite.setCalendarPreferredSize(new java.awt.Dimension(222, 159));
         try {
@@ -117,7 +117,7 @@ public class admVacaciones extends javax.swing.JPanel {
         } catch (datechooser.model.exeptions.IncompatibleDataExeption e1) {
             e1.printStackTrace();
         }
-        jPanel4.add(dateTramite, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 68, 190, -1));
+        jPanel4.add(dateTramite, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 68, 190, -1));
 
         add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 1000, 150));
 

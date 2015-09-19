@@ -10,6 +10,7 @@ import encapsulacion.empleado;
 import encapsulacion.objetivos;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import javax.swing.table.DefaultTableModel;
 import logicaNegocio.logicaDepartamento;
 import org.hibernate.Hibernate;
@@ -36,27 +37,37 @@ public class infoDepartamento extends javax.swing.JPanel {
       depart=dep.buscar(id);
       int iD=depart.getId();
       modOb=(DefaultTableModel)tablaInfo.getModel();
-      modEmp=(DefaultTableModel)tablaEmp.getModel();
-      List<objetivos> objetivosDepartamento=null;
-      List<empleado> empleados=null; 
-      List s1=new ArrayList();
-      s1.add(null);
+      int[] anchoInfo = {40,200};
+      int[] anchoEmp = {30,200,50};
       
+      for(int i = 0; i <tablaInfo.getColumnCount() ; i++){
+          tablaInfo.getColumnModel().getColumn(i).setPreferredWidth(anchoInfo[i]);
+      }
+      
+      modEmp=(DefaultTableModel)tablaEmp.getModel();
+      
+      for(int i = 0; i <tablaEmp.getColumnCount() ; i++){
+          tablaEmp.getColumnModel().getColumn(i).setPreferredWidth(anchoEmp[i]);
+      }
+      
+      Set<objetivos> objetivosDepartamento;
+      Set<empleado> empleados; 
+           
       idInfo.setText(String.valueOf(iD));
       infoNombre.setText(depart.getNombre());
       infoDescripcion.setText(depart.getDescripcion());
-       objetivosDepartamento=depart.getObjDepart();
-      objetivosDepartamento.removeAll(s1);
+     
+      objetivosDepartamento=depart.getObj();
+     
        for(objetivos obj: objetivosDepartamento) {     
           modOb.addRow(new Object[]{obj.getTipo(),obj.getObjDescripcion()});
         }    
        empleados=depart.getEmp();
-       empleados.removeAll(s1);
         for(empleado e: empleados) {  
            modEmp.addRow(new Object[]{e.getId(),e.getApellido()+" , "+e.getNombre(), e.getCar().getNombre()});
-           
         }    
-    }
+           
+    }    
        
     /**
      * This method is called from within the constructor to initialize the form.

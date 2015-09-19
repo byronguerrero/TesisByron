@@ -7,7 +7,7 @@
 package capaPresentacion;
 
 import encapsulacion.cargo;
-import java.util.List;
+import java.util.Set;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import logicaNegocio.logicaCargo;
@@ -203,7 +203,7 @@ public class admCargo extends javax.swing.JPanel {
         jPanel5.repaint();
         dato=String.valueOf(tablaCargo.getValueAt(jtableCargos.getSelectedRow(),0));
         iD=Integer.parseInt(dato);
-        inf.CargarDepartamento(iD);
+        inf.CargarCargo(iD);
         inf.setVisible(true);
         jPanel5.setLayout(new java.awt.BorderLayout());
         jPanel5.add(inf);
@@ -253,7 +253,7 @@ public class admCargo extends javax.swing.JPanel {
         tablaCargo=(DefaultTableModel)jtableCargos.getModel();
         logicaCargo c=new logicaCargo();
         Object [] fila =new Object[2];
-        List<cargo> cargos=null;
+        Set<cargo> cargos=null;
         cargos=c.consultar();
         for(cargo ca : cargos)
         {

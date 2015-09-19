@@ -7,6 +7,7 @@
 package encapsulacion;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -20,8 +21,8 @@ public class departamento {
     private String nombre;
     private String descripcion;
     private String tipoObjetivo;
-    private List <objetivos> objDepart=null;
-    private List <empleado> emp=null;
+    private Set <objetivos> obj= new HashSet<objetivos>(0);
+    private Set <empleado> emp= new HashSet<empleado>(0);
    
     
     public departamento() {
@@ -64,21 +65,23 @@ public class departamento {
         this.descripcion = descripcion;
     }
 
-    public List<objetivos> getObjDepart() {
-      return objDepart;
-     }
-    
-    public void setObjDepart(List<objetivos> objDepart) {
-     this.objDepart = objDepart;
+    public Set<objetivos> getObj() {
+        return obj;
     }
 
-    public List<empleado> getEmp() {
+    public void setObj(Set<objetivos> obj) {
+        this.obj = obj;
+    }
+
+    public Set<empleado> getEmp() {
         return emp;
     }
 
-    public void setEmp(List<empleado> emp) {
+    public void setEmp(Set<empleado> emp) {
         this.emp = emp;
-    }  
+    }
+
+   
 //este codigo esta de mas
     @Override
     public String toString() {
