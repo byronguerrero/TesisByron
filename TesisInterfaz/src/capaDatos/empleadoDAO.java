@@ -20,7 +20,7 @@ public class empleadoDAO {
 
     private Session sesion;
     private Transaction tx;
-    idxManager index =new idxManager();
+   // idxManager index =new idxManager();
     
   private void iniciaOperacion() throws HibernateException{
     
@@ -32,7 +32,6 @@ public class empleadoDAO {
   private void manejaExcepcion(HibernateException he) throws HibernateException{
     
     tx.rollback();
-    he.printStackTrace();
     throw new HibernateException("Ocurrió un error en la capa de acceso a datos", he);
         
         }
