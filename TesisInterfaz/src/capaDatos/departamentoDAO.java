@@ -14,7 +14,7 @@ import org.hibernate.Transaction;
  *
  * @author Xino
  */
-public class departamentoDAO {
+public class departamentoDAO { //agregar departamentos
 
 
     private Session sesion;
@@ -25,7 +25,10 @@ public class departamentoDAO {
       sesion = hibernateUtil.getSessionFactory().openSession();
       tx = sesion.beginTransaction();
       
+      
+      
         }
+  
     
   private void manejaExcepcion(HibernateException he) throws HibernateException{
     
