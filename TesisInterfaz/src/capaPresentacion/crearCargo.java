@@ -240,7 +240,7 @@ public class crearCargo extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Ingrese función","¡Error!",JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_agregarObjActionPerformed
 
-    private void guardarCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarCargoActionPerformed
+    private void guardarCargoActionPerformed(java.awt.event.ActionEvent evt) {                                             
         modOb=(DefaultTableModel)tablaFunciones.getModel();
         
         if(modOb.getRowCount() > 0 && !salmin.getText().isEmpty() && !salmax.getText().isEmpty() && !nombreCargo.getText().isEmpty()){
@@ -269,7 +269,7 @@ public class crearCargo extends javax.swing.JFrame {
             }
         } else
             JOptionPane.showMessageDialog(null,"Ingrese nombre de cargo, salario máximo, salario mínimo y al menos una función","¡Error!",JOptionPane.ERROR_MESSAGE);
-    }//GEN-LAST:event_guardarCargoActionPerformed
+    }                                            
 
     /**
      * @param args the command line arguments
