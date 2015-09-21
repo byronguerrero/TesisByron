@@ -63,8 +63,6 @@ public class admPermisos extends javax.swing.JPanel {
 
         jLabel7.setText("jLabel7");
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Informacion General", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION));
 
         jLabel3.setText("Empleado:");
@@ -86,7 +84,7 @@ public class admPermisos extends javax.swing.JPanel {
                     .addComponent(jLabel4)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(946, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,14 +100,9 @@ public class admPermisos extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 1065, -1));
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 12, -1, -1));
-
         jLabel2.setText("Departamento:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 24, -1, -1));
 
         comboDep.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(comboDep, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 21, 238, -1));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Descripcion del Permiso", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION));
 
@@ -132,32 +125,21 @@ public class admPermisos extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 220, 540, 110));
-
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Solicitud de Permiso", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jCheckBox5.setText("Remunerado");
-        jPanel4.add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 185, -1, -1));
 
         jLabel9.setText("Fecha de Solicitud:");
-        jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
         jLabel10.setText("Tipo de Permiso:");
-        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
         jLabel11.setText("Fecha Inicio fin:");
-        jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 143, -1, -1));
-        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 215, -1, -1));
 
         jCheckBox6.setText("Documentos de Justificacion de Permiso");
-        jPanel4.add(jCheckBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 233, -1, -1));
 
         radioHoras.setText("Horas");
-        jPanel4.add(radioHoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 66, -1, -1));
 
         radioDias.setText("Dias");
-        jPanel4.add(radioDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 66, -1, -1));
 
         dateSolicitud.setCalendarPreferredSize(new java.awt.Dimension(222, 159));
         try {
@@ -165,9 +147,64 @@ public class admPermisos extends javax.swing.JPanel {
         } catch (datechooser.model.exeptions.IncompatibleDataExeption e1) {
             e1.printStackTrace();
         }
-        jPanel4.add(dateSolicitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 28, 160, -1));
 
-        add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 520, 108));
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabel9)
+                        .addGap(22, 22, 22)
+                        .addComponent(dateSolicitud, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabel10)
+                        .addGap(37, 37, 37)
+                        .addComponent(radioHoras)
+                        .addGap(18, 18, 18)
+                        .addComponent(radioDias))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel11))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(jCheckBox5))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(130, 130, 130)
+                        .addComponent(jLabel12))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(jCheckBox6)))
+                .addContainerGap(193, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(jLabel9))
+                    .addComponent(dateSolicitud, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(jLabel10))
+                    .addComponent(radioHoras)
+                    .addComponent(radioDias))
+                .addGap(53, 53, 53)
+                .addComponent(jLabel11)
+                .addGap(27, 27, 27)
+                .addComponent(jCheckBox5)
+                .addGap(6, 6, 6)
+                .addComponent(jLabel12)
+                .addGap(18, 18, 18)
+                .addComponent(jCheckBox6))
+        );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Detalles de Permiso"));
 
@@ -189,8 +226,6 @@ public class admPermisos extends javax.swing.JPanel {
                 .addComponent(jLabel8)
                 .addContainerGap(53, Short.MAX_VALUE))
         );
-
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, -1));
 
         btnSave.setText("Guardar");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
@@ -216,19 +251,81 @@ public class admPermisos extends javax.swing.JPanel {
                 .addGap(20, 20, 20))
         );
 
-        add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(505, 474, -1, -1));
-
         jLabel13.setText("Jefe responsable");
-        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, -1, -1));
 
         comboBoss.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(comboBoss, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 478, 250, -1));
 
         comboEmp.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(comboEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(618, 21, 340, -1));
 
         jLabel14.setText("Empleado:");
-        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 24, -1, -1));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(239, 239, 239)
+                .addComponent(jLabel1))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(jLabel2)
+                .addGap(45, 45, 45)
+                .addComponent(comboDep, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62)
+                .addComponent(jLabel14)
+                .addGap(52, 52, 52)
+                .addComponent(comboEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel13)
+                .addGap(35, 35, 35)
+                .addComponent(comboBoss, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(85, 85, 85)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(jLabel1)
+                .addGap(9, 9, 9)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(comboDep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel14))))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel13))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(comboBoss, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed

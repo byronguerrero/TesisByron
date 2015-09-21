@@ -69,7 +69,6 @@ public class AdmDepartamentos extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tablaDepartamento);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administracion de Departamentos", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("AvantGarde LT Medium", 0, 12))); // NOI18N
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         agregarDepartamento.setText("Agregar");
         agregarDepartamento.addActionListener(new java.awt.event.ActionListener() {
@@ -77,7 +76,6 @@ public class AdmDepartamentos extends javax.swing.JPanel {
                 agregarDepartamentoActionPerformed(evt);
             }
         });
-        jPanel1.add(agregarDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 29, -1, -1));
 
         modicarDepartamento.setText("Modificar ");
         modicarDepartamento.addActionListener(new java.awt.event.ActionListener() {
@@ -85,7 +83,6 @@ public class AdmDepartamentos extends javax.swing.JPanel {
                 modicarDepartamentoActionPerformed(evt);
             }
         });
-        jPanel1.add(modicarDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, -1, -1));
 
         eliminarDep.setText("Eliminar");
         eliminarDep.addActionListener(new java.awt.event.ActionListener() {
@@ -93,7 +90,6 @@ public class AdmDepartamentos extends javax.swing.JPanel {
                 eliminarDepActionPerformed(evt);
             }
         });
-        jPanel1.add(eliminarDep, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, -1, -1));
 
         actualizar.setText("Actualizar");
         actualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -101,7 +97,39 @@ public class AdmDepartamentos extends javax.swing.JPanel {
                 actualizarActionPerformed(evt);
             }
         });
-        jPanel1.add(actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, -1, -1));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(agregarDepartamento)
+                .addGap(31, 31, 31)
+                .addComponent(modicarDepartamento)
+                .addGap(30, 30, 30)
+                .addComponent(eliminarDep)
+                .addGap(121, 121, 121)
+                .addComponent(actualizar))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(agregarDepartamento))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addComponent(modicarDepartamento))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addComponent(eliminarDep))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addComponent(actualizar)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Buscar Derpartamento", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("AvantGarde LT Medium", 0, 12))); // NOI18N
 
@@ -169,10 +197,10 @@ public class AdmDepartamentos extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(14, 14, 14)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

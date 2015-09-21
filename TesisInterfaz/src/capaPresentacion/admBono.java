@@ -48,13 +48,9 @@ public class admBono extends javax.swing.JPanel {
         comboEmp = new javax.swing.JComboBox();
         jLabel9 = new javax.swing.JLabel();
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         comboDep.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(comboDep, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 21, 219, -1));
 
         jLabel1.setText("Departamento:");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 24, -1, -1));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Informacion General"));
 
@@ -92,8 +88,6 @@ public class admBono extends javax.swing.JPanel {
                 .addComponent(jLabel5)
                 .addContainerGap(34, Short.MAX_VALUE))
         );
-
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 70, 1020, -1));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Detalles"));
 
@@ -154,21 +148,59 @@ public class admBono extends javax.swing.JPanel {
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 271, 1020, -1));
-
         guardarBono.setText("Guardar");
         guardarBono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 guardarBonoActionPerformed(evt);
             }
         });
-        add(guardarBono, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 530, -1, -1));
 
         comboEmp.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(comboEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(555, 21, 350, -1));
 
         jLabel9.setText("Empleado:");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 24, -1, -1));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jLabel1)
+                .addGap(34, 34, 34)
+                .addComponent(comboDep, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(61, 61, 61)
+                .addComponent(jLabel9)
+                .addGap(39, 39, 39)
+                .addComponent(comboEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(510, 510, 510)
+                .addComponent(guardarBono))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(comboDep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel9))))
+                .addGap(28, 28, 28)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22)
+                .addComponent(guardarBono))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void guardarBonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarBonoActionPerformed

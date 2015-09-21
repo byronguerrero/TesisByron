@@ -51,12 +51,7 @@ public class AdmDescuentos extends javax.swing.JPanel {
         comboEmp = new javax.swing.JComboBox();
         jLabel10 = new javax.swing.JLabel();
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         jLabel4.setText("Departamento:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 24, -1, -1));
-
-        add(comboDep, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 21, 238, -1));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Informacion General", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION));
 
@@ -94,8 +89,6 @@ public class AdmDescuentos extends javax.swing.JPanel {
                 .addComponent(jLabel8)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 56, 1050, -1));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Detalles"));
 
@@ -157,8 +150,6 @@ public class AdmDescuentos extends javax.swing.JPanel {
                 .addGap(18, 18, 18))
         );
 
-        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 1050, -1));
-
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Motivo"));
 
         motiveDesc.setColumns(20);
@@ -182,20 +173,62 @@ public class AdmDescuentos extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 1050, 150));
-
         saveDesc.setText("Guardar");
         saveDesc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveDescActionPerformed(evt);
             }
         });
-        add(saveDesc, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 540, -1, -1));
-
-        add(comboEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 21, 310, -1));
 
         jLabel10.setText("Empleado:");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 24, -1, -1));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jLabel4)
+                .addGap(15, 15, 15)
+                .addComponent(comboDep, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
+                .addComponent(jLabel10)
+                .addGap(44, 44, 44)
+                .addComponent(comboEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(490, 490, 490)
+                .addComponent(saveDesc))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(comboDep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel10))))
+                .addGap(14, 14, 14)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(saveDesc))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void saveDescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveDescActionPerformed

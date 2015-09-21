@@ -93,7 +93,6 @@ public class admCargo extends javax.swing.JPanel {
         );
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Administracion de Puestos de Trabajo", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("AvantGarde LT Medium", 0, 12))); // NOI18N
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         agregarCargo.setText("Agregar");
         agregarCargo.addActionListener(new java.awt.event.ActionListener() {
@@ -101,7 +100,6 @@ public class admCargo extends javax.swing.JPanel {
                 agregarCargoActionPerformed(evt);
             }
         });
-        jPanel1.add(agregarCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
         modicarCargo.setText("Modificar ");
         modicarCargo.addActionListener(new java.awt.event.ActionListener() {
@@ -109,7 +107,6 @@ public class admCargo extends javax.swing.JPanel {
                 modicarCargoActionPerformed(evt);
             }
         });
-        jPanel1.add(modicarCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, -1, -1));
 
         eliminarCargo.setText("Eliminar");
         eliminarCargo.addActionListener(new java.awt.event.ActionListener() {
@@ -117,7 +114,6 @@ public class admCargo extends javax.swing.JPanel {
                 eliminarCargoActionPerformed(evt);
             }
         });
-        jPanel1.add(eliminarCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, -1, -1));
 
         actualizar.setText("Actualizar");
         actualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -125,7 +121,32 @@ public class admCargo extends javax.swing.JPanel {
                 actualizarActionPerformed(evt);
             }
         });
-        jPanel1.add(actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, -1, -1));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(agregarCargo)
+                .addGap(20, 20, 20)
+                .addComponent(modicarCargo)
+                .addGap(20, 20, 20)
+                .addComponent(eliminarCargo)
+                .addGap(171, 171, 171)
+                .addComponent(actualizar))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(13, 13, 13)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(agregarCargo)
+                    .addComponent(modicarCargo)
+                    .addComponent(eliminarCargo)
+                    .addComponent(actualizar))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Buscar Puesto de Trabajo", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("AvantGarde LT Medium", 0, 12))); // NOI18N
 
@@ -185,10 +206,10 @@ public class admCargo extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(11, 11, 11)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
