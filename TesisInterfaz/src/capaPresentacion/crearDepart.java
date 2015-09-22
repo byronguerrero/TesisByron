@@ -146,7 +146,7 @@ public class crearDepart extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 454, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -176,39 +176,40 @@ public class crearDepart extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(nomDep, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addComponent(agregarDepartamento)
-                        .addGap(45, 45, 45)
-                        .addComponent(jButton2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(12, 12, 12)
+                .addComponent(jLabel2)
+                .addGap(12, 12, 12)
+                .addComponent(nomDep, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(162, 162, 162)
+                .addComponent(agregarDepartamento)
+                .addGap(39, 39, 39)
+                .addComponent(jButton2))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel2))
                     .addComponent(nomDep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(13, 13, 13)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(agregarDepartamento))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(agregarDepartamento)
+                    .addComponent(jButton2))
+                .addGap(11, 11, 11))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -232,10 +233,12 @@ public class crearDepart extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void agregarObjetivosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarObjetivosActionPerformed
-        // TODO add your handling code here:
-        modOb=(DefaultTableModel)tablaObje.getModel();
-        modOb.addRow(new Object[]{comboTipoObjetivo.getSelectedItem().toString(),objetivoDep.getText()});
-        objetivoDep.setText("");
+     if(!objetivoDep.getText().isEmpty()){
+            modOb=(DefaultTableModel)tablaObje.getModel();
+            modOb.addRow(new Object[]{comboTipoObjetivo.getSelectedItem().toString(),objetivoDep.getText()});
+            objetivoDep.setText("");
+        } else
+            JOptionPane.showMessageDialog(null,"Ingrese un objetivo","¡Error!",JOptionPane.ERROR_MESSAGE);       
     }//GEN-LAST:event_agregarObjetivosActionPerformed
 
     private void objetivoDepKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_objetivoDepKeyReleased
@@ -248,33 +251,38 @@ public class crearDepart extends javax.swing.JFrame {
     }//GEN-LAST:event_objetivoDepKeyReleased
 
     private void agregarDepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarDepartamentoActionPerformed
-        // TODO add your handling code here:
-        departamento dep=new departamento();
+          // TODO add your handling code here:
+         modOb=(DefaultTableModel)tablaObje.getModel();
         
-        logicaDepartamento logDep= new logicaDepartamento();
-        Set <objetivos> objDep=new HashSet<objetivos>(0);
-        modOb=(DefaultTableModel)tablaObje.getModel();
-   
-        try{
+         if(!nomDep.getText().isEmpty() && modOb.getRowCount() > 0){
+            departamento dep=new departamento();
+            logicaDepartamento logDep= new logicaDepartamento();
+            Set <objetivos> objDep=new HashSet<objetivos>(0);
+ 
+            try{
 
-            dep.setNombre(nomDep.getText());
-            dep.setDescripcion(descripcion.getText());
+                dep.setNombre(nomDep.getText());
+                dep.setDescripcion(descripcion.getText());
 
-            for(int fila=0;fila<modOb.getRowCount();fila++){ //recorro las columnas
-                objetivos obj=new objetivos();
-                obj.setTipo(modOb.getValueAt(fila,0).toString());
-                System.out.println(obj.getTipo());
-                obj.setObjDescripcion(modOb.getValueAt(fila,1).toString());
-                System.out.println(obj.getObjDescripcion());
-                objDep.add(obj);
-            }
-            dep.setObj(objDep);
-            logDep.validar(dep);
-            logDep.agregarDepartamento(dep);
+                for(int fila=0;fila<modOb.getRowCount();fila++){ //recorro las columnas
+                    objetivos obj=new objetivos();
+                    obj.setTipo(modOb.getValueAt(fila,0).toString());
+                    System.out.println(obj.getTipo());
+                    obj.setObjDescripcion(modOb.getValueAt(fila,1).toString());
+                    System.out.println(obj.getObjDescripcion());
+                    objDep.add(obj);
+                }
+                dep.setObj(objDep);
+                logDep.validar(dep);
+                
+                logDep.agregarDepartamento(dep);
 
-        }catch(exceptionClass ex){
+            }catch(exceptionClass ex){
             JOptionPane.showMessageDialog(null,ex.getError(),"!Error¡",JOptionPane.ERROR_MESSAGE);
-        }
+          }
+        
+        } else
+            JOptionPane.showMessageDialog(null,"Nombre de depto. y al menos 1 objetivo son obligatorios","¡Error!",JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_agregarDepartamentoActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

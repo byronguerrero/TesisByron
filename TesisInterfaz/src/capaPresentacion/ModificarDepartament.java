@@ -118,7 +118,7 @@ public class ModificarDepartament extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -166,7 +166,7 @@ public class ModificarDepartament extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -198,47 +198,47 @@ public class ModificarDepartament extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(nomDep, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(idDep, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(37, 37, 37))
-                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addComponent(actualizarDepartamento)
-                        .addGap(45, 45, 45)
-                        .addComponent(jButton2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(12, 12, 12)
+                .addComponent(jLabel2)
+                .addGap(12, 12, 12)
+                .addComponent(nomDep, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(jLabel3)
+                .addGap(12, 12, 12)
+                .addComponent(idDep, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(2, 2, 2)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(actualizarDepartamento)
+                .addGap(50, 50, 50)
+                .addComponent(jButton2))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(idDep, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2)
-                        .addComponent(nomDep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3)))
-                .addGap(18, 18, 18)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(nomDep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel3))
+                    .addComponent(idDep, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
+                .addGap(11, 11, 11)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(actualizarDepartamento))
-                .addContainerGap())
+                .addGap(24, 24, 24)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(actualizarDepartamento)
+                    .addComponent(jButton2)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -265,20 +265,17 @@ public class ModificarDepartament extends javax.swing.JFrame {
         
         departamento dep;
         logicaDepartamento logDep= new logicaDepartamento();
-        List<objetivos> objDep=new ArrayList<>();
+        Set<objetivos> objDep=new HashSet<>();
         modOb=(DefaultTableModel) tablaObje.getModel();
         s1.add(null);
         
         dep=logDep.buscar(i);
-        
         nomDep.setText(dep.getNombre());
         descripcion.setText(dep.getDescripcion());
         idDep.setText(String.valueOf(dep.getId()));
  
-      //  objetivosDepartamento=dep.getObjDepart();
-        objetivosDepartamento.removeAll(s1);
-        
-         for(objetivos obj: objetivosDepartamento) {
+        objDep=dep.getObj();       
+         for(objetivos obj: objDep) {
                     modOb.addRow(new Object[]{obj.getTipo(),obj.getObjDescripcion()});
         }       
  
@@ -295,87 +292,109 @@ public class ModificarDepartament extends javax.swing.JFrame {
     }//GEN-LAST:event_objetivoDepKeyReleased
 
     private void agregarObjetivosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarObjetivosActionPerformed
-        // TODO add your handling code here:
-       logicaDepartamento logDep= new logicaDepartamento();
-       modOb=(DefaultTableModel)tablaObje.getModel();
-       modOb.addRow(new Object[]{comboTipoObjetivo.getSelectedItem().toString(),objetivoDep.getText()});   
-       depart=logDep.buscar(Integer.parseInt(idDep.getText()));
-       List<objetivos> objDep=new ArrayList<>();
-       s1.add(null);
-      
-       try{
+    
+        if(!objetivoDep.getText().isEmpty()){
+            logicaDepartamento logDep= new logicaDepartamento();
+            modOb=(DefaultTableModel)tablaObje.getModel();
+            modOb.addRow(new Object[]{comboTipoObjetivo.getSelectedItem().toString(),objetivoDep.getText()});   
+            depart=logDep.buscar(Integer.parseInt(idDep.getText()));
+            List<objetivos> objDep=new ArrayList<>();
+            s1.add(null);
+
+            try{
      //       objDep=depart.getObjDepart(); 
-            objetivos obj=new objetivos();
-            objDep.removeAll(s1);
-            depart.setNombre(nomDep.getText());
-            depart.setDescripcion(descripcion.getText());
-            obj.setTipo(modOb.getValueAt(tablaObje.getRowCount()-1,0).toString());
-            obj.setObjDescripcion(modOb.getValueAt(tablaObje.getRowCount()-1,1).toString());
-            objDep.add(obj);
-            
+                objetivos obj=new objetivos();
+                objDep.removeAll(s1);
+                depart.setNombre(nomDep.getText());
+                depart.setDescripcion(descripcion.getText());
+                obj.setTipo(modOb.getValueAt(tablaObje.getRowCount()-1,0).toString());
+                obj.setObjDescripcion(modOb.getValueAt(tablaObje.getRowCount()-1,1).toString());
+                objDep.add(obj);
+
       //      depart.setObjDepart(objDep);
-            logDep.validar(depart);
-            logDep.actualizar(depart);
+                logDep.validar(depart);
+                logDep.actualizar(depart);
 
-        }catch(exceptionClass ex){
-            JOptionPane.showMessageDialog(null,ex.getError(),"!Error¡",JOptionPane.ERROR_MESSAGE);
-        }
-       objetivoDep.setText("");
+            } catch(exceptionClass ex){
+                JOptionPane.showMessageDialog(null,ex.getError(),"!Error¡",JOptionPane.ERROR_MESSAGE);
+            }
+            objetivoDep.setText("");
+        } else
+            JOptionPane.showMessageDialog(null,"Ingrese objetivo","¡Error!",JOptionPane.ERROR_MESSAGE);        
+  
+            
+            
     }//GEN-LAST:event_agregarObjetivosActionPerformed
-
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void actualizarDepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarDepartamentoActionPerformed
-        // TODO add your handling code here:
-        logicaDepartamento logDep= new logicaDepartamento();
-        departamento dep=new departamento();
-        List<objetivos> objDep=new ArrayList<>();
-        s1.add(null);
-        dep=logDep.buscar(Integer.parseInt(idDep.getText()));
         modOb=(DefaultTableModel)tablaObje.getModel();
         
-        try{
-            
-      //      objDep=dep.getObjDepart();
+        if(modOb.getRowCount() != 0 && !nomDep.getText().isEmpty()){
+        
+            logicaDepartamento logDep= new logicaDepartamento();
+            departamento dep=new departamento();
+            Set<objetivos> objDep=new HashSet<>();
+            dep=logDep.buscar(Integer.parseInt(idDep.getText()));
+
+            try{
+            objDep=dep.getObj();
             dep.setNombre(nomDep.getText());
             dep.setDescripcion(descripcion.getText());
-            objDep.removeAll(s1);
             
-           for(int fila=0;fila<modOb.getRowCount();fila++){  
-                objetivos obj=objDep.get(fila);
+       /*    for(int fila=0;fila<modOb.getRowCount();fila++){  
+                objetivos obj=new objetivos();
                 obj.setTipo(modOb.getValueAt(fila,0).toString());
                 obj.setObjDescripcion(modOb.getValueAt(fila,1).toString());
                 objDep.add(obj);
-                objDep.removeAll(s1);
-           }
-       //    dep.setObjDepart(objDep);
+                dep.setNombre(nomDep.getText());
+                dep.setDescripcion(descripcion.getText());
+           }*/
+          
+           dep.setObj(objDep);
            logDep.validar(dep);     
             
      int i=JOptionPane.showConfirmDialog(null, "Registro Actualizado Correctamente","Actualizado", JOptionPane.OK_CANCEL_OPTION);
             if(i==0){
                 logDep.actualizar(dep);
                 this.dispose();
+                }
+            } catch(exceptionClass ex){
+                JOptionPane.showMessageDialog(null,ex.getError(),"!Error¡",JOptionPane.ERROR_MESSAGE);
             }
-        }catch(exceptionClass ex){
-            JOptionPane.showMessageDialog(null,ex.getError(),"!Error¡",JOptionPane.ERROR_MESSAGE);
-        }
+}  
     }//GEN-LAST:event_actualizarDepartamentoActionPerformed
 
     private void eliminarObjetivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarObjetivoActionPerformed
-        // TODO add your handling code here:
         modOb=(DefaultTableModel)tablaObje.getModel();
-        departamento dep;
+        departamento dep=new departamento();
         logicaDepartamento logDep= new logicaDepartamento();
+        
         dep=logDep.buscar(Integer.parseInt(idDep.getText()));
-        List<objetivos> objDep=new ArrayList<>();
-     //   objDep=dep.getObjDepart();
-        objDep.removeAll(s1);
+               
+        Set<objetivos> objDep=new HashSet<>();
+        Set<objetivos> objDepEliminar=new HashSet<>();
+        objDep=dep.getObj();
+        objetivos obj=new objetivos();
         int i=tablaObje.getSelectedRow();
+        obj.setObjDescripcion(String.valueOf(modOb.getValueAt(tablaObje.getSelectedRow(),1)));
+       
+        for(objetivos eliminar: objDep){
+                        
+                if(eliminar.getObjDescripcion().equals(obj.getObjDescripcion())) {
+                    System.out.println("encontro uno igual");
+                    objDepEliminar.add(eliminar);
+            }
+                
+        } 
+        
         modOb.removeRow(i);
-        objDep.remove(i);
+       objDep.removeAll(objDepEliminar);
+        System.out.println(objDep.size());
         logDep.actualizar(dep);      
     }//GEN-LAST:event_eliminarObjetivoActionPerformed
 

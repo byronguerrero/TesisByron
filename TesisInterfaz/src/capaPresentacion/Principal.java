@@ -18,6 +18,19 @@ import logicaNegocio.logicaDepartamento;
  * @author byron
  */
 public class Principal extends javax.swing.JFrame {
+    
+    AdmEmpleados x;
+    AdmDepartamentos y;
+    admPermisos z;
+    AdmSalarios t;
+    admCargo ca;
+    admPermisos ap;
+    admVacaciones av;
+    admViaticos viaticos;
+    admSanciones san;
+    AdmDescuentos desc;
+    admAnticipo anti;
+    admBono abono;
 
     /**
      * Creates new form Principal
@@ -26,16 +39,6 @@ public class Principal extends javax.swing.JFrame {
         super("Sistema de Gestion de Recursos Humanos");
         initComponents();
     }
-
-        AdmEmpleados x;
-        AdmDepartamentos y;
-        admPermisos z;
-        AdmSalarios t;
-        admCargo ca;
-        admPermisos ap;
-        admVacaciones av;
-        admViaticos viaticos;
-        admSanciones san;
         
         
     /**
@@ -197,14 +200,29 @@ public class Principal extends javax.swing.JFrame {
         jMenu6.add(jMenuItem10);
 
         jMenuItem11.setText("Aplicar Bono");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
         jMenu6.add(jMenuItem11);
 
         jMenu2.add(jMenu6);
 
         jMenuItem8.setText("Anticipo");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem8);
 
         jMenuItem7.setText("Descuentos");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem7);
 
         jMenuItem9.setText("Sanciones");
@@ -359,6 +377,33 @@ public class Principal extends javax.swing.JFrame {
         panelMain.revalidate();
         
     }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        desc = new AdmDescuentos();
+        panelMain.removeAll();
+        desc.setVisible(true);
+        panelMain.setLayout(new java.awt.BorderLayout());
+        panelMain.add(desc);
+        panelMain.revalidate();
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        anti = new admAnticipo();
+        panelMain.removeAll();
+        anti.setVisible(true);
+        panelMain.setLayout(new java.awt.BorderLayout());
+        panelMain.add(anti);
+        panelMain.revalidate();
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        abono = new admBono();
+        panelMain.removeAll();
+        abono.setVisible(true);
+        panelMain.setLayout(new java.awt.BorderLayout());
+        panelMain.add(abono);
+        panelMain.revalidate();
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     /**
      * @param args the command line arguments

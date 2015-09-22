@@ -24,12 +24,8 @@ public class departamentoDAO { //agregar departamentos
     
       sesion = hibernateUtil.getSessionFactory().openSession();
       tx = sesion.beginTransaction();
-      
-      
-      
         }
   
-    
   private void manejaExcepcion(HibernateException he) throws HibernateException{
     
     tx.rollback();

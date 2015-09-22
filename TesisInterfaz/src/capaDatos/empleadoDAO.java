@@ -32,7 +32,6 @@ public class empleadoDAO {
   private void manejaExcepcion(HibernateException he) throws HibernateException{
     
     tx.rollback();
-    he.printStackTrace();
     throw new HibernateException("Ocurrió un error en la capa de acceso a datos", he);
         
         }

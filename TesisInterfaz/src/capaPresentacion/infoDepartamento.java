@@ -4,7 +4,6 @@
  */
 package capaPresentacion;
 
-import encapsulacion.cargo;
 import encapsulacion.departamento;
 import encapsulacion.empleado;
 import encapsulacion.objetivos;
@@ -13,7 +12,6 @@ import java.util.List;
 import java.util.Set;
 import javax.swing.table.DefaultTableModel;
 import logicaNegocio.logicaDepartamento;
-import org.hibernate.Hibernate;
 
 /**
  *
@@ -59,15 +57,23 @@ public class infoDepartamento extends javax.swing.JPanel {
      
       objetivosDepartamento=depart.getObj();
      
-      for(objetivos obj: objetivosDepartamento) {     
+
+        for(objetivos obj: objetivosDepartamento) {     
          modOb.addRow(new Object[]{obj.getTipo(),obj.getObjDescripcion()});
-        }    
-      empleados=depart.getEmp();
+      }
+      
+     empleados=depart.getEmp();
+      
         for(empleado e: empleados) {  
-         modEmp.addRow(new Object[]{e.getId(),e.getApellido()+" , "+e.getNombre(), e.getCar().getNombre()});
-       }    
+            modEmp.addRow(new Object[]{e.getId(),e.getApellido()+" , "+e.getNombre(), e.getCar().getNombre()});
+     }    
      
     }
+    
+             
+           
+        
+
        
     /**
      * This method is called from within the constructor to initialize the form.
