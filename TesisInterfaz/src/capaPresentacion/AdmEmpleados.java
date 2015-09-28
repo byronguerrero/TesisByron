@@ -23,6 +23,7 @@ public class AdmEmpleados extends javax.swing.JPanel {
      */
     public AdmEmpleados() {
         initComponents();
+        CargarTabla();
     }
     infoEmpleado a;
     DefaultTableModel tablaEmp;
@@ -221,7 +222,7 @@ public class AdmEmpleados extends javax.swing.JPanel {
         // TODO add your handling code here:
         
         //LimpiarJTable();
-        empleadoDAO dao=new empleadoDAO();
+   /*     empleadoDAO dao=new empleadoDAO();
         tablaEmp=(DefaultTableModel)tablaEmpleado.getModel();
         em=new logicaEmpleados();       
         Object [] fila =new Object[5];
@@ -236,13 +237,34 @@ public class AdmEmpleados extends javax.swing.JPanel {
             fila[4]= e.getDep().getNombre();
           
            tablaEmp.addRow(fila);
-        } 
+        } */
       
-        empleados=dao.obtenerEmpleados(45);
-        System.out.println(empleados.size());
+      //  empleados=dao.obtenerEmpleados(45);
+     //   System.out.println(empleados.size());
         
     }//GEN-LAST:event_jButton5ActionPerformed
-
+    
+  private void CargarTabla(){
+      
+      empleadoDAO dao=new empleadoDAO();
+        tablaEmp=(DefaultTableModel)tablaEmpleado.getModel();
+        em=new logicaEmpleados();       
+        Object [] fila =new Object[5];
+        List<empleado> empleados=null;
+        empleados=em.consultar();
+        for(empleado e : empleados) 
+        { 
+            fila[0]= e.getId();
+            fila[1]= e.getApellido();
+            fila[2]= e.getNombre();
+            fila[3]= e.getCar().getNombre();
+            fila[4]= e.getDep().getNombre();
+          
+           tablaEmp.addRow(fila);
+        }
+  
+  }  
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

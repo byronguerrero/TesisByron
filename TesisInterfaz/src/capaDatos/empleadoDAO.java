@@ -71,7 +71,7 @@ public class empleadoDAO {
         List<empleado> empleados=null;
         //String hql= "FROM empleado E WHERE E.departamento.id =:ide";
         
-        try{
+      /*  try{
              iniciaOperacion();
              Query query=sesion.createQuery("FROM departamento D join D.empleado WHERE D.id= 45");
             // query.setParameter("ide", id);
@@ -79,7 +79,7 @@ public class empleadoDAO {
         
         }finally{  
             sesion.close();   
-        }  
+        }  */
        return empleados;
    }
   

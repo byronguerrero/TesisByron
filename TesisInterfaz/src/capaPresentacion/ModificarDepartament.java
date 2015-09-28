@@ -298,13 +298,12 @@ public class ModificarDepartament extends javax.swing.JFrame {
             modOb=(DefaultTableModel)tablaObje.getModel();
             modOb.addRow(new Object[]{comboTipoObjetivo.getSelectedItem().toString(),objetivoDep.getText()});   
             depart=logDep.buscar(Integer.parseInt(idDep.getText()));
-            List<objetivos> objDep=new ArrayList<>();
-            s1.add(null);
+            Set<objetivos> objDep=new HashSet<>();
+      
 
             try{
-     //       objDep=depart.getObjDepart(); 
+                objDep=depart.getObj(); 
                 objetivos obj=new objetivos();
-                objDep.removeAll(s1);
                 depart.setNombre(nomDep.getText());
                 depart.setDescripcion(descripcion.getText());
                 obj.setTipo(modOb.getValueAt(tablaObje.getRowCount()-1,0).toString());
@@ -345,15 +344,6 @@ public class ModificarDepartament extends javax.swing.JFrame {
             objDep=dep.getObj();
             dep.setNombre(nomDep.getText());
             dep.setDescripcion(descripcion.getText());
-            
-       /*    for(int fila=0;fila<modOb.getRowCount();fila++){  
-                objetivos obj=new objetivos();
-                obj.setTipo(modOb.getValueAt(fila,0).toString());
-                obj.setObjDescripcion(modOb.getValueAt(fila,1).toString());
-                objDep.add(obj);
-                dep.setNombre(nomDep.getText());
-                dep.setDescripcion(descripcion.getText());
-           }*/
           
            dep.setObj(objDep);
            logDep.validar(dep);     

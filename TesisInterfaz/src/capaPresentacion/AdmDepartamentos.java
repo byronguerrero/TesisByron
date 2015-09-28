@@ -24,6 +24,7 @@ public class AdmDepartamentos extends javax.swing.JPanel {
      */
     public AdmDepartamentos() {
         initComponents();
+        CargarTabla();
     }
     
     infoDepartamento i;
@@ -46,7 +47,6 @@ public class AdmDepartamentos extends javax.swing.JPanel {
         agregarDepartamento = new javax.swing.JButton();
         modicarDepartamento = new javax.swing.JButton();
         eliminarDep = new javax.swing.JButton();
-        actualizar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
@@ -91,13 +91,6 @@ public class AdmDepartamentos extends javax.swing.JPanel {
             }
         });
 
-        actualizar.setText("Actualizar");
-        actualizar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actualizarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -109,8 +102,7 @@ public class AdmDepartamentos extends javax.swing.JPanel {
                 .addComponent(modicarDepartamento)
                 .addGap(30, 30, 30)
                 .addComponent(eliminarDep)
-                .addGap(121, 121, 121)
-                .addComponent(actualizar))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,10 +116,7 @@ public class AdmDepartamentos extends javax.swing.JPanel {
                         .addComponent(modicarDepartamento))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(13, 13, 13)
-                        .addComponent(eliminarDep))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addComponent(actualizar)))
+                        .addComponent(eliminarDep)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -182,8 +171,10 @@ public class AdmDepartamentos extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 553, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 553, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16)))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -231,9 +222,9 @@ public class AdmDepartamentos extends javax.swing.JPanel {
         
     }//GEN-LAST:event_agregarDepartamentoActionPerformed
 
-    private void actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActionPerformed
-        // TODO add your handling code here:
-        LimpiarJTable();
+    private void CargarTabla(){
+        
+         LimpiarJTable();
         tablaDepart=(DefaultTableModel)tablaDepartamento.getModel();
         logicaDepartamento dep=new logicaDepartamento();       
         Object [] fila =new Object[2];
@@ -244,13 +235,8 @@ public class AdmDepartamentos extends javax.swing.JPanel {
             fila[0]= c.getId();
             fila[1]= c.getNombre();
             tablaDepart.addRow(fila);
-        } 
-        
-        
-        
-        
-    }//GEN-LAST:event_actualizarActionPerformed
-
+        }
+    }
     private void modicarDepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modicarDepartamentoActionPerformed
         // TODO add your handling code here:   
         tablaDepart=(DefaultTableModel)tablaDepartamento.getModel();
@@ -290,7 +276,6 @@ public class AdmDepartamentos extends javax.swing.JPanel {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton actualizar;
     private javax.swing.JButton agregarDepartamento;
     private javax.swing.JButton eliminarDep;
     private javax.swing.JButton jButton5;
