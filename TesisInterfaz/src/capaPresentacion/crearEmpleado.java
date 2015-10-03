@@ -6,11 +6,11 @@
 
 package capaPresentacion;
 
-import encapsulacion.cargo;
-import encapsulacion.departamento;
-import encapsulacion.empleado;
-import encapsulacion.estudios;
-import encapsulacion.experienciaLaboral;
+import entidades.PuestoTrabajo;
+import entidades.Departamento;
+import entidades.Empleado;
+import entidades.Educacion;
+import entidades.ExpLaboral;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -40,8 +40,8 @@ public class crearEmpleado extends javax.swing.JFrame {
     logicaDepartamento logicaDep=new logicaDepartamento();
     logicaCargo logCar=new logicaCargo();
     List s1=new ArrayList();
-    List<departamento> dep;
-    Set<cargo> carg;
+    List<Departamento> dep;
+    Set<PuestoTrabajo> carg;
 
 
     /**
@@ -639,17 +639,17 @@ public class crearEmpleado extends javax.swing.JFrame {
                 && !afp.getText().isEmpty() && !nitEmpleado.getText().isEmpty() && !domicilio.getText().isEmpty() && !edadEmpleado.getText().isEmpty()
                 && !numCuenta.getText().isEmpty() && tablaEstudios.getRowCount() != 0 && comboCargo.getSelectedIndex() != -1 && !salarioEmpleado.getText().isEmpty()){
      
-        empleado emp=new empleado();
-        estudios es=new estudios();
-        departamento depempleado=new departamento();
-        cargo cargoempleado=new cargo();
-        experienciaLaboral exp=new experienciaLaboral();
+        Empleado emp=new Empleado();
+        Educacion es=new Educacion();
+        Departamento depempleado=new Departamento();
+        PuestoTrabajo cargoempleado=new PuestoTrabajo();
+        ExpLaboral exp=new ExpLaboral();
         modeloComboDep = new DefaultComboBoxModel();
         int id;
         mod=(DefaultTableModel) tablaEstudios.getModel();
         modEx=(DefaultTableModel) tablaExperiencia.getModel();
-        Set <estudios> empleadoEstudio=new HashSet<estudios>();
-        List<experienciaLaboral> experiencia=new ArrayList<>();
+        Set <Educacion> empleadoEstudio=new HashSet<Educacion>();
+        Set<ExpLaboral> experiencia=new HashSet<>();
         String fecha;
         
         try{
@@ -663,23 +663,23 @@ public class crearEmpleado extends javax.swing.JFrame {
         emp.setDireccion(domicilio.getText());
         emp.setNit(nitEmpleado.getText());
         emp.setSalario(Double.parseDouble(salarioEmpleado.getText()));
-        departamento depId=(departamento)comboDepart.getSelectedItem();
-        depempleado=logicaDep.buscar(depId.getId());
-            System.out.println(depId.getId()+"departamento id");
-        emp.setDep(depempleado);
+        Departamento depId=(Departamento)comboDepart.getSelectedItem();
+        depempleado=logicaDep.buscar(depId.getIdDepartamento());
+            System.out.println(depId.getIdDepartamento()+"departamento id");
+        emp.setDepartamento(depempleado);
         id=0;
-        cargo cargoId=(cargo)comboCargo.getSelectedItem();
-        cargoempleado=logCar.buscar(cargoId.getId());
-            System.out.println(cargoId.getId()+"cargo id");
-        emp.setCar(cargoempleado);
+        PuestoTrabajo cargoId=(PuestoTrabajo)comboCargo.getSelectedItem();
+        cargoempleado=logCar.buscar(cargoId.getIdPuestoTrabajo());
+            System.out.println(cargoId.getIdPuestoTrabajo()+"cargo id");
+        emp.setPuestoTrabajo(cargoempleado);
        // emp.setIdx(1);
         
         //emp.setCargo(comboCargo.getSelectedItem().toString());
        // emp.setDepartamento(comboDepart.getSelectedItem().toString());
        
-        emp.setNumCuenta(numCuenta.getText());
-        emp.setEstCivil(estcivilcombo.getSelectedItem().toString());
-        emp.setGenero(generocombo.getSelectedItem().toString());
+        emp.setCuenta(numCuenta.getText());
+        emp.setEstadoCivil(estcivilcombo.getSelectedItem().toString());
+        emp.setSexo(generocombo.getSelectedItem().toString());
         
         for(int fila=0;fila<mod.getRowCount();fila++){
                 es.setNivel(mod.getValueAt(fila,0).toString());
@@ -692,17 +692,17 @@ public class crearEmpleado extends javax.swing.JFrame {
                 empleadoEstudio.add(es);
         }
         
-        emp.setEstudios(empleadoEstudio);
+        emp.setEducacions(empleadoEstudio);
         
         for(int fila=0;fila<modEx.getRowCount();fila++){
         
             exp.setLugar(modEx.getValueAt(fila,0).toString());
             exp.setCargo(modEx.getValueAt(fila,1).toString());
-            exp.setTiempo(modEx.getValueAt(fila,2).toString());
+            exp.setTiempo(Integer.parseInt(modEx.getValueAt(fila,2).toString()));
             experiencia.add(exp);
         }
         
-        emp.setExp(experiencia);
+        emp.setExpLaborals(experiencia);
         
        logicaEmp.validar(emp);
        logicaEmp.agregarEmpleado(emp);        
@@ -776,12 +776,12 @@ public class crearEmpleado extends javax.swing.JFrame {
        dep.removeAll(s1);
        carg.removeAll(s1);
        
-       for(departamento d: dep) {     
-           modeloComboDep.addElement(new departamento(d.getId(),d.getNombre()));      
+       for(Departamento d: dep) {     
+           modeloComboDep.addElement(new Departamento(d.getIdDepartamento(),d.getNombre(),""));      
        }
        
-       for(cargo c: carg) {     
-          modeloComboCargo.addElement(new cargo(c.getId(),c.getNombre()));     
+       for(PuestoTrabajo c: carg) {     
+          modeloComboCargo.addElement(new PuestoTrabajo(c.getIdPuestoTrabajo(),c.getNombre(),"",0,0));     
        }
         
        comboDepart.setModel(modeloComboDep);

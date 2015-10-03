@@ -6,9 +6,6 @@
 
 package capaPresentacion;
 
-import encapsulacion.estudios;
-import java.util.List;
-
 /**
  *
  * @author byron

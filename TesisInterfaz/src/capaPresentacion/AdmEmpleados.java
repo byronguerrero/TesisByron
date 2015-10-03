@@ -7,7 +7,7 @@
 package capaPresentacion;
 
 import capaDatos.empleadoDAO;
-import encapsulacion.empleado;
+import entidades.Empleado;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import logicaNegocio.logicaEmpleados;
@@ -225,15 +225,15 @@ public class AdmEmpleados extends javax.swing.JPanel {
         tablaEmp=(DefaultTableModel)tablaEmpleado.getModel();
         em=new logicaEmpleados();       
         Object [] fila =new Object[5];
-        List<empleado> empleados=null;
+        List<Empleado> empleados=null;
         empleados=em.consultar();
-        for(empleado e : empleados) 
+        for(Empleado e : empleados) 
         { 
-            fila[0]= e.getId();
+            fila[0]= e.getEmpleadoId();
             fila[1]= e.getApellido();
             fila[2]= e.getNombre();
-            fila[3]= e.getCar().getNombre();
-            fila[4]= e.getDep().getNombre();
+            fila[3]= e.getPuestoTrabajo().getNombre();
+            fila[4]= e.getDepartamento().getNombre();
           
            tablaEmp.addRow(fila);
         } 

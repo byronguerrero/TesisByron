@@ -4,10 +4,8 @@
  */
 package capaPresentacion;
 
-import encapsulacion.cargo;
-import encapsulacion.funcionesCargo;
-import java.util.ArrayList;
-import java.util.List;
+import entidades.PuestoTrabajo;
+import entidades.Objetivo;
 import java.util.Set;
 import javax.swing.table.DefaultTableModel;
 import logicaNegocio.logicaCargo;
@@ -19,7 +17,7 @@ import logicaNegocio.logicaCargo;
 public class infoCargo extends javax.swing.JPanel {
 
     
-     private cargo ca;
+     private PuestoTrabajo ca;
      private DefaultTableModel modOb;
     /**
      * Creates new form infoCargo
@@ -32,16 +30,16 @@ public class infoCargo extends javax.swing.JPanel {
       
       logicaCargo c=new logicaCargo();  
       ca=c.buscar(id);
-      int iD=ca.getId();
+      int iD=ca.getIdPuestoTrabajo();
       modOb=(DefaultTableModel)tablaInfo.getModel();
-      Set<funcionesCargo> tareasCargo;
+      Set<Objetivo> tareasCargo;
       
       idInfo.setText(String.valueOf(iD));
       infoNombre.setText(ca.getNombre());
       infoDescripcion.setText(ca.getDescripcion());
-       tareasCargo=ca.getFunciones();
-       for(funcionesCargo f: tareasCargo) {     
-          modOb.addRow(new Object[]{f.getTarea()});
+       tareasCargo=ca.getObjetivos();
+       for(Objetivo f: tareasCargo) {     
+          modOb.addRow(new Object[]{f.getFuncion()});
         }    
     }
 

@@ -5,9 +5,8 @@
 package logicaNegocio;
 
 import capaDatos.puestoTrabajoDAO;
-import encapsulacion.cargo;
+import entidades.PuestoTrabajo;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -18,25 +17,25 @@ public class logicaCargo {
     
     puestoTrabajoDAO datos=new puestoTrabajoDAO();
     
-    public void agregarDepartamento(cargo c) {
+    public void agregarDepartamento(PuestoTrabajo c) {
         datos.guardarCargo(c);
     }
     
-    public Set<cargo> consultar(){
-        Set <cargo> c=new HashSet<cargo>(datos.obtenerCargos());
+    public Set<PuestoTrabajo> consultar(){
+        Set <PuestoTrabajo> c=new HashSet<PuestoTrabajo>(datos.obtenerCargos());
         return c;   
     }
     
-     public cargo buscar(int ids){
+     public PuestoTrabajo buscar(int ids){
     
-        cargo depar=null;
+        PuestoTrabajo depar=null;
         depar=datos.buscarCargo(ids);
         return depar;
     
     }
     
     
-    public void validar(cargo c) throws exceptionClass {
+    public void validar(PuestoTrabajo c) throws exceptionClass {
             
          if((c.getNombre().length()<=0) || (!c.getNombre().matches("^[A-Za-z ]*$"))){ //Validando Nombre 
             throw new exceptionClass("Datos Incorrectos","Campo: Nombre");

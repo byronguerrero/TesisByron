@@ -6,10 +6,7 @@
 
 package capaPresentacion;
 
-import encapsulacion.cargo;
-
-import java.util.List;
-import java.util.Set;
+import entidades.PuestoTrabajo;
 import java.util.Set;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -277,11 +274,11 @@ public class admCargo extends javax.swing.JPanel {
         tablaCargo=(DefaultTableModel)jtableCargos.getModel();
         logicaCargo c=new logicaCargo();
         Object [] fila =new Object[2];
-        Set<cargo> cargos=null;
+        Set<PuestoTrabajo> cargos=null;
         cargos=c.consultar();
-        for(cargo ca : cargos)
+        for(PuestoTrabajo ca : cargos)
         {
-            fila[0]= ca.getId();
+            fila[0]= ca.getIdPuestoTrabajo();
             fila[1]= ca.getNombre();
             tablaCargo.addRow(fila);
         }

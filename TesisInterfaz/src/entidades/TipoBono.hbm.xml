@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 10-02-2015 07:45:03 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="entidades.TipoBono" optimistic-lock="version" schema="pribantsa" table="tipo_bono">
+    <id name="idTipoBono" type="int">
+      <column name="idTipoBono"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="entidades.PuestoTrabajo" fetch="select" name="puestoTrabajo">
+      <column name="idPuesto" not-null="true"/>
+    </many-to-one>
+    <property name="porcentaje" type="double">
+      <column name="porcentaje" not-null="true" precision="17" scale="17"/>
+    </property>
+  </class>
+</hibernate-mapping>

@@ -6,13 +6,6 @@
 
 package capaPresentacion;
 
-import capaDatos.departamentoDAO;
-import encapsulacion.departamento;
-import java.awt.BorderLayout;
-import java.util.List;
-import javax.swing.table.DefaultTableModel;
-import logicaNegocio.logicaDepartamento;
-
 /**
  *
  * @author byron

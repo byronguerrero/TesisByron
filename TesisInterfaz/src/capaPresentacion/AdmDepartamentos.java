@@ -6,8 +6,8 @@
 
 package capaPresentacion;
 
-import encapsulacion.departamento;
-import encapsulacion.objetivos;
+import entidades.Departamento;
+import entidades.Objetivo;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -237,11 +237,11 @@ public class AdmDepartamentos extends javax.swing.JPanel {
         tablaDepart=(DefaultTableModel)tablaDepartamento.getModel();
         logicaDepartamento dep=new logicaDepartamento();       
         Object [] fila =new Object[2];
-        List<departamento> department=null;
+        List<Departamento> department=null;
         department=dep.consultar();
-        for(departamento c : department) 
+        for(Departamento c : department) 
         { 
-            fila[0]= c.getId();
+            fila[0]= c.getIdDepartamento();
             fila[1]= c.getNombre();
             tablaDepart.addRow(fila);
         } 

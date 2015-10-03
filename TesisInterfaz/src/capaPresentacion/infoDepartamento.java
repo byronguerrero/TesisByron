@@ -4,11 +4,9 @@
  */
 package capaPresentacion;
 
-import encapsulacion.departamento;
-import encapsulacion.empleado;
-import encapsulacion.objetivos;
-import java.util.ArrayList;
-import java.util.List;
+import entidades.Departamento;
+import entidades.Empleado;
+import entidades.Objdepartamento;
 import java.util.Set;
 import javax.swing.table.DefaultTableModel;
 import logicaNegocio.logicaDepartamento;
@@ -19,7 +17,7 @@ import logicaNegocio.logicaDepartamento;
  */
 public class infoDepartamento extends javax.swing.JPanel {
 
-     private departamento depart;
+     private Departamento depart;
      private DefaultTableModel modOb;
      private DefaultTableModel modEmp;
     /**
@@ -33,7 +31,7 @@ public class infoDepartamento extends javax.swing.JPanel {
      
       logicaDepartamento dep=new logicaDepartamento();  
       depart=dep.buscar(id);
-      int iD=depart.getId();
+      int iD=depart.getIdDepartamento();
       modOb=(DefaultTableModel)tablaInfo.getModel();
       int[] anchoInfo = {40,200};
       int[] anchoEmp = {30,200,50};
@@ -48,24 +46,24 @@ public class infoDepartamento extends javax.swing.JPanel {
           tablaEmp.getColumnModel().getColumn(i).setPreferredWidth(anchoEmp[i]);
       }
       
-      Set<objetivos> objetivosDepartamento;
-      Set<empleado> empleados; 
+      Set<Objdepartamento> objetivosDepartamento;
+      Set<Empleado> empleados; 
            
       idInfo.setText(String.valueOf(iD));
       infoNombre.setText(depart.getNombre());
       infoDescripcion.setText(depart.getDescripcion());
      
-      objetivosDepartamento=depart.getObj();
+      objetivosDepartamento=depart.getObjdepartamentos();
      
 
-        for(objetivos obj: objetivosDepartamento) {     
-         modOb.addRow(new Object[]{obj.getTipo(),obj.getObjDescripcion()});
+        for(Objdepartamento obj: objetivosDepartamento) {     
+         modOb.addRow(new Object[]{obj.getTipo(),obj.getDescripcion()});
       }
       
-     empleados=depart.getEmp();
+     empleados=depart.getEmpleados();
       
-        for(empleado e: empleados) {  
-            modEmp.addRow(new Object[]{e.getId(),e.getApellido()+" , "+e.getNombre(), e.getCar().getNombre()});
+        for(Empleado e: empleados) {  
+            modEmp.addRow(new Object[]{e.getEmpleadoId(),e.getApellido()+" , "+e.getNombre(), e.getPuestoTrabajo().getNombre()});
      }    
      
     }

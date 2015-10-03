@@ -4,7 +4,7 @@
  */
 package capaDatos;
 
-import encapsulacion.empleado;
+import entidades.Empleado;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
@@ -36,7 +36,7 @@ public class empleadoDAO {
         
         }
     
-  public void guardaEmpleado(empleado emp)
+  public void guardaEmpleado(Empleado emp)
 { 
     try 
     { 
@@ -52,9 +52,9 @@ public class empleadoDAO {
 }
   
 }
-   public List<empleado> obtenerEmpleados(){
+   public List<Empleado> obtenerEmpleados(){
   
-        List<empleado> empleados=null;
+        List<Empleado> empleados=null;
         
         try{
              iniciaOperacion();
@@ -66,9 +66,9 @@ public class empleadoDAO {
         return empleados;
   }
   
-   public List<empleado> obtenerEmpleados(int id){
+   public List<Empleado> obtenerEmpleados(int id){
         
-        List<empleado> empleados=null;
+        List<Empleado> empleados=null;
         //String hql= "FROM empleado E WHERE E.departamento.id =:ide";
         
         try{

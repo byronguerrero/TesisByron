@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 10-02-2015 07:45:03 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="entidades.Descuento" optimistic-lock="version" schema="pribantsa" table="descuento">
+    <id name="idDescuento" type="int">
+      <column name="idDescuento"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="entidades.Empleado" fetch="select" name="empleado">
+      <column name="idEmpleado" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="entidades.TipoDescuento" fetch="select" name="tipoDescuento">
+      <column name="idTipoDescuento" not-null="true"/>
+    </many-to-one>
+    <property name="fecha" type="date">
+      <column length="13" name="fecha" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>

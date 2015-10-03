@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 10-02-2015 07:45:03 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="entidades.Capacitacion" optimistic-lock="version" schema="pribantsa" table="capacitacion">
+    <id name="idCapacitacion" type="int">
+      <column name="idCapacitacion"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="entidades.Empleado" fetch="select" name="empleado">
+      <column name="idEmpleado" not-null="true"/>
+    </many-to-one>
+    <property name="nombre" type="string">
+      <column name="nombre" not-null="true"/>
+    </property>
+    <property name="descripcion" type="string">
+      <column name="descripcion" not-null="true"/>
+    </property>
+    <property name="lugar" type="string">
+      <column name="lugar" not-null="true"/>
+    </property>
+    <property name="fechaInicio" type="date">
+      <column length="13" name="fecha_inicio" not-null="true"/>
+    </property>
+    <property name="fechaFin" type="date">
+      <column length="13" name="fecha_fin" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>

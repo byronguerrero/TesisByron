@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 10-02-2015 07:45:03 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="entidades.Empleado" optimistic-lock="version" schema="pribantsa" table="empleado">
+    <id name="empleadoId" type="int">
+      <column name="empleado_id"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="entidades.Departamento" fetch="select" name="departamento">
+      <column name="id_departamento" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="entidades.PuestoTrabajo" fetch="select" name="puestoTrabajo">
+      <column name="id_puestotrabajo" not-null="true"/>
+    </many-to-one>
+    <property name="dui" type="string">
+      <column name="dui" not-null="true"/>
+    </property>
+    <property name="isss" type="string">
+      <column name="isss" not-null="true"/>
+    </property>
+    <property name="afp" type="string">
+      <column name="afp" not-null="true"/>
+    </property>
+    <property name="sexo" type="string">
+      <column name="sexo"/>
+    </property>
+    <property name="nit" type="string">
+      <column name="nit" not-null="true"/>
+    </property>
+    <property name="nombre" type="string">
+      <column name="nombre" not-null="true"/>
+    </property>
+    <property name="apellido" type="string">
+      <column name="apellido" not-null="true"/>
+    </property>
+    <property name="cuenta" type="string">
+      <column name="cuenta" not-null="true"/>
+    </property>
+    <property name="salario" type="double">
+      <column name="salario" not-null="true" precision="17" scale="17"/>
+    </property>
+    <property name="edad" type="java.lang.Integer">
+      <column name="edad"/>
+    </property>
+    <property name="estadoCivil" type="string">
+      <column name="estado_civil"/>
+    </property>
+    <property name="direccion" type="string">
+      <column length="200" name="direccion" not-null="true"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="sancions" table="sancion">
+      <key>
+        <column name="idEmpleado" not-null="true"/>
+      </key>
+      <one-to-many class="entidades.Sancion"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="descuentos" table="descuento">
+      <key>
+        <column name="idEmpleado" not-null="true"/>
+      </key>
+      <one-to-many class="entidades.Descuento"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="telefonos" table="telefono">
+      <key>
+        <column name="idEmpleado" not-null="true"/>
+      </key>
+      <one-to-many class="entidades.Telefono"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="expLaborals" table="exp_laboral">
+      <key>
+        <column name="idEmpleado"/>
+      </key>
+      <one-to-many class="entidades.ExpLaboral"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="reconocimientos" table="reconocimiento">
+      <key>
+        <column name="idEmpleado" not-null="true"/>
+      </key>
+      <one-to-many class="entidades.Reconocimiento"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="correos" table="correo">
+      <key>
+        <column name="idEmpleado" not-null="true"/>
+      </key>
+      <one-to-many class="entidades.Correo"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="puestoHistoricos" table="puesto_historico">
+      <key>
+        <column name="idEmpleado" not-null="true"/>
+      </key>
+      <one-to-many class="entidades.PuestoHistorico"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="vacacions" table="vacacion">
+      <key>
+        <column name="idEmpleado" not-null="true"/>
+      </key>
+      <one-to-many class="entidades.Vacacion"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="bonos" table="bono">
+      <key>
+        <column name="idEmpleado" not-null="true"/>
+      </key>
+      <one-to-many class="entidades.Bono"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="educacions" table="educacion">
+      <key>
+        <column name="id_empleado_estudios"/>
+      </key>
+      <one-to-many class="entidades.Educacion"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="permisos" table="permiso">
+      <key>
+        <column name="idEmpleado" not-null="true"/>
+      </key>
+      <one-to-many class="entidades.Permiso"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="transaccions" table="transaccion">
+      <key>
+        <column name="idEmpleado" not-null="true"/>
+      </key>
+      <one-to-many class="entidades.Transaccion"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="evaluacions" table="evaluacion">
+      <key>
+        <column name="idEmpleado" not-null="true"/>
+      </key>
+      <one-to-many class="entidades.Evaluacion"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="contratos" table="contrato">
+      <key>
+        <column name="idEmpleado" not-null="true"/>
+      </key>
+      <one-to-many class="entidades.Contrato"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="capacitacions" table="capacitacion">
+      <key>
+        <column name="idEmpleado" not-null="true"/>
+      </key>
+      <one-to-many class="entidades.Capacitacion"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="planillas" table="planilla">
+      <key>
+        <column name="idEmpleado" not-null="true"/>
+      </key>
+      <one-to-many class="entidades.Planilla"/>
+    </set>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 10-02-2015 07:45:03 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="entidades.TipoContrato" optimistic-lock="version" schema="pribantsa" table="tipo_contrato">
+    <id name="idTipoContrato" type="int">
+      <column name="idTipoContrato"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="descripcion" type="string">
+      <column name="descripcion" not-null="true"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="contratos" table="contrato">
+      <key>
+        <column name="idTipoContrato" not-null="true"/>
+      </key>
+      <one-to-many class="entidades.Contrato"/>
+    </set>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 10-02-2015 07:45:03 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="entidades.Permiso" optimistic-lock="version" schema="pribantsa" table="permiso">
+    <id name="idPermiso" type="int">
+      <column name="idPermiso"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="entidades.Empleado" fetch="select" name="empleado">
+      <column name="idEmpleado" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="entidades.TipoPermiso" fetch="select" name="tipoPermiso">
+      <column name="idTipoPermiso" not-null="true"/>
+    </many-to-one>
+    <property name="remunerado" type="boolean">
+      <column name="remunerado" not-null="true">
+        <comment>Si el permiso es remunerado se marcarÃ¡ este campo como "verdadero", en caso no sea remunerado se marcarÃ¡ como "falso".</comment>
+      </column>
+    </property>
+    <property name="inicio" type="timestamp">
+      <column length="29" name="inicio" not-null="true"/>
+    </property>
+    <property name="fin" type="timestamp">
+      <column length="29" name="fin" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>

@@ -5,10 +5,8 @@
 package logicaNegocio;
 
 import capaDatos.departamentoDAO;
-import encapsulacion.departamento;
-import encapsulacion.objetivos;
+import entidades.Departamento;
 import java.util.List;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,25 +16,25 @@ public class logicaDepartamento {
     
     departamentoDAO datos=new departamentoDAO();
    
-    public void agregarDepartamento(departamento dep) {
+    public void agregarDepartamento(Departamento dep) {
         datos.guardarDepartamento(dep);
        }
     
-    public List<departamento> consultar(){
-        List<departamento> departamentos=null;
+    public List<Departamento> consultar(){
+        List<Departamento> departamentos=null;
         departamentos=datos.obtenerDepartamento();
         return  departamentos;
     }
     
-    public departamento buscar(int ids){
+    public Departamento buscar(int ids){
     
-        departamento depar=null;
+        Departamento depar=null;
         depar=datos.buscarDepartamento(ids);
         return depar;
     
     }
     
-    public void actualizar(departamento dep){
+    public void actualizar(Departamento dep){
         
         datos.Actualizar(dep);
     
@@ -44,7 +42,7 @@ public class logicaDepartamento {
     
     public void eliminar(int i){
         
-       departamento dep=null;
+       Departamento dep=null;
        dep=buscar(i);
         System.out.println(dep.getNombre());
         System.out.println("departamento encontrado");
@@ -52,7 +50,7 @@ public class logicaDepartamento {
     
     }  
           
-    public void validar(departamento dep) throws exceptionClass {
+    public void validar(Departamento dep) throws exceptionClass {
             
          if((dep.getNombre().length()<=0) || (!dep.getNombre().matches("^[A-Za-z ]*$"))){ //Validando Nombre 
             throw new exceptionClass("Datos Incorrectos","Campo: Nombre Departamento");

@@ -6,8 +6,8 @@
 
 package capaPresentacion;
 
-import encapsulacion.departamento;
-import encapsulacion.objetivos;
+import entidades.Departamento;
+import entidades.Objdepartamento;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -255,9 +255,9 @@ public class crearDepart extends javax.swing.JFrame {
          modOb=(DefaultTableModel)tablaObje.getModel();
         
          if(!nomDep.getText().isEmpty() && modOb.getRowCount() > 0){
-            departamento dep=new departamento();
+            Departamento dep=new Departamento();
             logicaDepartamento logDep= new logicaDepartamento();
-            Set <objetivos> objDep=new HashSet<objetivos>(0);
+            Set <Objdepartamento> objDep=new HashSet<Objdepartamento>(0);
  
             try{
 
@@ -265,14 +265,14 @@ public class crearDepart extends javax.swing.JFrame {
                 dep.setDescripcion(descripcion.getText());
 
                 for(int fila=0;fila<modOb.getRowCount();fila++){ //recorro las columnas
-                    objetivos obj=new objetivos();
+                    Objdepartamento obj=new Objdepartamento();
                     obj.setTipo(modOb.getValueAt(fila,0).toString());
                     System.out.println(obj.getTipo());
-                    obj.setObjDescripcion(modOb.getValueAt(fila,1).toString());
-                    System.out.println(obj.getObjDescripcion());
+                    obj.setDescripcion(modOb.getValueAt(fila,1).toString());
+                    System.out.println(obj.getDescripcion());
                     objDep.add(obj);
                 }
-                dep.setObj(objDep);
+                dep.setObjdepartamentos(objDep);
                 logDep.validar(dep);
                 
                 logDep.agregarDepartamento(dep);

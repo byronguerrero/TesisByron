@@ -6,8 +6,8 @@
 
 package capaPresentacion;
 
-import encapsulacion.cargo;
-import encapsulacion.funcionesCargo;
+import entidades.PuestoTrabajo;
+import entidades.Objetivo;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -245,9 +245,9 @@ public class crearCargo extends javax.swing.JFrame {
 
     private void GuardarCargoActionPerformed(java.awt.event.ActionEvent evt) {                                             
         // TODO add your handling code here:
-        cargo puesto=new cargo();
+        PuestoTrabajo puesto=new PuestoTrabajo();
         logicaCargo logDep= new logicaCargo();
-        Set <funcionesCargo> funcionCargo=new HashSet<funcionesCargo>();
+        Set <Objetivo> funcionCargo=new HashSet<Objetivo>();
     
     }
 
@@ -256,23 +256,23 @@ public class crearCargo extends javax.swing.JFrame {
         modOb=(DefaultTableModel)tablaFunciones.getModel();
         
         if(modOb.getRowCount() > 0 && !salmin.getText().isEmpty() && !salmax.getText().isEmpty() && !nombreCargo.getText().isEmpty()){
-            cargo puesto=new cargo();
+            PuestoTrabajo puesto=new PuestoTrabajo();
             logicaCargo logDep= new logicaCargo();
-            Set <funcionesCargo> funcionCargo=new HashSet<funcionesCargo>();
+            Set <Objetivo> funcionCargo=new HashSet<Objetivo>();
             
             try{
 
                 puesto.setNombre(nombreCargo.getText());
                 puesto.setDescripcion(desCargo.getText());
-                puesto.setSalMin(Double.parseDouble(salmin.getText()));
-                puesto.setSalMax(Double.parseDouble(salmax.getText()));
+                puesto.setSalarioMin(Double.parseDouble(salmin.getText()));
+                puesto.setSalarioMax(Double.parseDouble(salmax.getText()));
 
                 for(int fila=0;fila<modOb.getRowCount();fila++){ //recorro las filas
-                    funcionesCargo funcion=new funcionesCargo();
-                    funcion.setTarea(modOb.getValueAt(fila,0).toString());
+                    Objetivo funcion=new Objetivo();
+                    funcion.setFuncion(modOb.getValueAt(fila,0).toString());
                     funcionCargo.add(funcion);
                 }
-                puesto.setFunciones(funcionCargo);
+                puesto.setObjetivos(funcionCargo);
                 logDep.validar(puesto);
                 logDep.agregarDepartamento(puesto);
 

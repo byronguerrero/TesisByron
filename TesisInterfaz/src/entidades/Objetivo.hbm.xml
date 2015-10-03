@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 10-02-2015 07:45:03 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="entidades.Objetivo" optimistic-lock="version" schema="pribantsa" table="objetivo">
+    <id name="idObjetivo" type="int">
+      <column name="id_objetivo"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="entidades.PuestoTrabajo" fetch="select" name="puestoTrabajo">
+      <column name="idpuesto_trabajo"/>
+    </many-to-one>
+    <property name="funcion" type="string">
+      <column name="funcion" not-null="true"/>
+    </property>
+    <property name="idx" type="java.lang.Integer">
+      <column name="idx"/>
+    </property>
+  </class>
+</hibernate-mapping>

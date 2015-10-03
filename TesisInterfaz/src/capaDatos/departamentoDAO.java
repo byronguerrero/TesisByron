@@ -4,7 +4,7 @@
  */
 package capaDatos;
 
-import encapsulacion.departamento;
+import entidades.Departamento;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -50,13 +50,13 @@ public class departamentoDAO { //agregar departamentos
 }
   
 }
-  public List<departamento> obtenerDepartamento(){
+  public List<Departamento> obtenerDepartamento(){
   
-        List<departamento> dep=null;
+        List<Departamento> dep=null;
         
         try{
              iniciaOperacion();
-             dep=sesion.createQuery("from departamento").list();
+             dep=sesion.createQuery("from Departamento").list();
         
         }finally{  
             sesion.close();   
@@ -64,13 +64,13 @@ public class departamentoDAO { //agregar departamentos
         return dep;
   }
   
-   public departamento buscarDepartamento(int ids){
+   public Departamento buscarDepartamento(int ids){
   
-        departamento dep=null;
+        Departamento dep=null;
         
         try{
              iniciaOperacion();
-             dep=(departamento)sesion.get(departamento.class, ids);
+             dep=(Departamento)sesion.get(Departamento.class, ids);
         
         }finally{  
             sesion.close();   

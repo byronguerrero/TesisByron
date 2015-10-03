@@ -4,8 +4,8 @@
  */
 package capaPresentacion;
 
-import encapsulacion.departamento;
-import encapsulacion.objetivos;
+import entidades.Departamento;
+import entidades.Objdepartamento;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -22,8 +22,8 @@ import logicaNegocio.logicaDepartamento;
  */
 public class ModificarDepartament extends javax.swing.JFrame {
     private DefaultTableModel modOb;
-    List<objetivos> objetivosDepartamento=null;
-    departamento depart;
+    List<Objdepartamento> objetivosDepartamento=null;
+    Departamento depart;
     List s1=new ArrayList();
     /**
      * Creates new form ModificarDepartament
@@ -263,20 +263,20 @@ public class ModificarDepartament extends javax.swing.JFrame {
 
     public void mostrarDepart(int i){
         
-        departamento dep;
+        Departamento dep;
         logicaDepartamento logDep= new logicaDepartamento();
-        Set<objetivos> objDep=new HashSet<>();
+        Set<Objdepartamento> objDep=new HashSet<>();
         modOb=(DefaultTableModel) tablaObje.getModel();
         s1.add(null);
         
         dep=logDep.buscar(i);
         nomDep.setText(dep.getNombre());
         descripcion.setText(dep.getDescripcion());
-        idDep.setText(String.valueOf(dep.getId()));
+        idDep.setText(String.valueOf(dep.getIdDepartamento()));
  
-        objDep=dep.getObj();       
-         for(objetivos obj: objDep) {
-                    modOb.addRow(new Object[]{obj.getTipo(),obj.getObjDescripcion()});
+        objDep=dep.getObjdepartamentos();       
+         for(Objdepartamento obj: objDep) {
+                    modOb.addRow(new Object[]{obj.getTipo(),obj.getDescripcion()});
         }       
  
     }
@@ -298,17 +298,17 @@ public class ModificarDepartament extends javax.swing.JFrame {
             modOb=(DefaultTableModel)tablaObje.getModel();
             modOb.addRow(new Object[]{comboTipoObjetivo.getSelectedItem().toString(),objetivoDep.getText()});   
             depart=logDep.buscar(Integer.parseInt(idDep.getText()));
-            List<objetivos> objDep=new ArrayList<>();
+            List<Objdepartamento> objDep=new ArrayList<>();
             s1.add(null);
 
             try{
      //       objDep=depart.getObjDepart(); 
-                objetivos obj=new objetivos();
+                Objdepartamento obj=new Objdepartamento();
                 objDep.removeAll(s1);
                 depart.setNombre(nomDep.getText());
                 depart.setDescripcion(descripcion.getText());
                 obj.setTipo(modOb.getValueAt(tablaObje.getRowCount()-1,0).toString());
-                obj.setObjDescripcion(modOb.getValueAt(tablaObje.getRowCount()-1,1).toString());
+                obj.setDescripcion(modOb.getValueAt(tablaObje.getRowCount()-1,1).toString());
                 objDep.add(obj);
 
       //      depart.setObjDepart(objDep);
@@ -337,17 +337,17 @@ public class ModificarDepartament extends javax.swing.JFrame {
         if(modOb.getRowCount() != 0 && !nomDep.getText().isEmpty()){
         
             logicaDepartamento logDep= new logicaDepartamento();
-            departamento dep=new departamento();
-            Set<objetivos> objDep=new HashSet<>();
+            Departamento dep=new Departamento();
+            Set<Objdepartamento> objDep=new HashSet<>();
             dep=logDep.buscar(Integer.parseInt(idDep.getText()));
 
             try{
-            objDep=dep.getObj();
+            objDep=dep.getObjdepartamentos();
             dep.setNombre(nomDep.getText());
             dep.setDescripcion(descripcion.getText());
             
        /*    for(int fila=0;fila<modOb.getRowCount();fila++){  
-                objetivos obj=new objetivos();
+                Objetivo obj=new Objetivo();
                 obj.setTipo(modOb.getValueAt(fila,0).toString());
                 obj.setObjDescripcion(modOb.getValueAt(fila,1).toString());
                 objDep.add(obj);
@@ -355,7 +355,7 @@ public class ModificarDepartament extends javax.swing.JFrame {
                 dep.setDescripcion(descripcion.getText());
            }*/
           
-           dep.setObj(objDep);
+           dep.setObjdepartamentos(objDep);
            logDep.validar(dep);     
             
      int i=JOptionPane.showConfirmDialog(null, "Registro Actualizado Correctamente","Actualizado", JOptionPane.OK_CANCEL_OPTION);
@@ -371,21 +371,21 @@ public class ModificarDepartament extends javax.swing.JFrame {
 
     private void eliminarObjetivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarObjetivoActionPerformed
         modOb=(DefaultTableModel)tablaObje.getModel();
-        departamento dep=new departamento();
+        Departamento dep=new Departamento();
         logicaDepartamento logDep= new logicaDepartamento();
         
         dep=logDep.buscar(Integer.parseInt(idDep.getText()));
                
-        Set<objetivos> objDep=new HashSet<>();
-        Set<objetivos> objDepEliminar=new HashSet<>();
-        objDep=dep.getObj();
-        objetivos obj=new objetivos();
+        Set<Objdepartamento> objDep=new HashSet<>();
+        Set<Objdepartamento> objDepEliminar=new HashSet<>();
+        objDep=dep.getObjdepartamentos();
+        Objdepartamento obj=new Objdepartamento();
         int i=tablaObje.getSelectedRow();
-        obj.setObjDescripcion(String.valueOf(modOb.getValueAt(tablaObje.getSelectedRow(),1)));
+        obj.setDescripcion(String.valueOf(modOb.getValueAt(tablaObje.getSelectedRow(),1)));
        
-        for(objetivos eliminar: objDep){
+        for(Objdepartamento eliminar: objDep){
                         
-                if(eliminar.getObjDescripcion().equals(obj.getObjDescripcion())) {
+                if(eliminar.getDescripcion().equals(obj.getDescripcion())) {
                     System.out.println("encontro uno igual");
                     objDepEliminar.add(eliminar);
             }
