@@ -8,9 +8,7 @@ package capaPresentacion;
 
 import entidades.Departamento;
 import entidades.Objdepartamento;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -257,7 +255,7 @@ public class crearDepart extends javax.swing.JFrame {
          if(!nomDep.getText().isEmpty() && modOb.getRowCount() > 0){
             Departamento dep=new Departamento();
             logicaDepartamento logDep= new logicaDepartamento();
-            Set <Objdepartamento> objDep=new HashSet<Objdepartamento>(0);
+            Set <Objdepartamento> objDep=new HashSet<>(0);
  
             try{
 
@@ -306,19 +304,16 @@ public class crearDepart extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(crearDepart.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(crearDepart.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(crearDepart.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(crearDepart.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new crearDepart().setVisible(true);
             }

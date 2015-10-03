@@ -8,7 +8,6 @@ import entidades.Departamento;
 import entidades.Objdepartamento;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import javax.swing.JOptionPane;
@@ -265,7 +264,6 @@ public class ModificarDepartament extends javax.swing.JFrame {
         
         Departamento dep;
         logicaDepartamento logDep= new logicaDepartamento();
-        Set<Objdepartamento> objDep=new HashSet<>();
         modOb=(DefaultTableModel) tablaObje.getModel();
         s1.add(null);
         
@@ -274,7 +272,7 @@ public class ModificarDepartament extends javax.swing.JFrame {
         descripcion.setText(dep.getDescripcion());
         idDep.setText(String.valueOf(dep.getIdDepartamento()));
  
-        objDep=dep.getObjdepartamentos();       
+        Set<Objdepartamento> objDep = dep.getObjdepartamentos();       
          for(Objdepartamento obj: objDep) {
                     modOb.addRow(new Object[]{obj.getTipo(),obj.getDescripcion()});
         }       
@@ -298,13 +296,12 @@ public class ModificarDepartament extends javax.swing.JFrame {
             modOb=(DefaultTableModel)tablaObje.getModel();
             modOb.addRow(new Object[]{comboTipoObjetivo.getSelectedItem().toString(),objetivoDep.getText()});   
             depart=logDep.buscar(Integer.parseInt(idDep.getText()));
-            List<Objdepartamento> objDep=new ArrayList<>();
+            Set<Objdepartamento> objDep;
             s1.add(null);
 
             try{
-     //       objDep=depart.getObjDepart(); 
+                objDep=depart.getObjdepartamentos(); 
                 Objdepartamento obj=new Objdepartamento();
-                objDep.removeAll(s1);
                 depart.setNombre(nomDep.getText());
                 depart.setDescripcion(descripcion.getText());
                 obj.setTipo(modOb.getValueAt(tablaObje.getRowCount()-1,0).toString());
@@ -337,48 +334,35 @@ public class ModificarDepartament extends javax.swing.JFrame {
         if(modOb.getRowCount() != 0 && !nomDep.getText().isEmpty()){
         
             logicaDepartamento logDep= new logicaDepartamento();
-            Departamento dep=new Departamento();
-            Set<Objdepartamento> objDep=new HashSet<>();
-            dep=logDep.buscar(Integer.parseInt(idDep.getText()));
+            Departamento dep= logDep.buscar(Integer.parseInt(idDep.getText()));
+            Set<Objdepartamento> objDep;
 
             try{
-            objDep=dep.getObjdepartamentos();
-            dep.setNombre(nomDep.getText());
-            dep.setDescripcion(descripcion.getText());
-            
-       /*    for(int fila=0;fila<modOb.getRowCount();fila++){  
-                Objetivo obj=new Objetivo();
-                obj.setTipo(modOb.getValueAt(fila,0).toString());
-                obj.setObjDescripcion(modOb.getValueAt(fila,1).toString());
-                objDep.add(obj);
+                objDep=dep.getObjdepartamentos();
                 dep.setNombre(nomDep.getText());
                 dep.setDescripcion(descripcion.getText());
-           }*/
-          
-           dep.setObjdepartamentos(objDep);
-           logDep.validar(dep);     
-            
-     int i=JOptionPane.showConfirmDialog(null, "Registro Actualizado Correctamente","Actualizado", JOptionPane.OK_CANCEL_OPTION);
-            if(i==0){
-                logDep.actualizar(dep);
-                this.dispose();
+
+                dep.setObjdepartamentos(objDep);
+                logDep.validar(dep);     
+
+                int i=JOptionPane.showConfirmDialog(null, "Registro Actualizado Correctamente","Actualizado", JOptionPane.OK_CANCEL_OPTION);
+                if(i==0){
+                    logDep.actualizar(dep);
+                    this.dispose();
                 }
             } catch(exceptionClass ex){
                 JOptionPane.showMessageDialog(null,ex.getError(),"!Error¡",JOptionPane.ERROR_MESSAGE);
             }
-}  
+        }  
     }//GEN-LAST:event_actualizarDepartamentoActionPerformed
 
     private void eliminarObjetivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarObjetivoActionPerformed
         modOb=(DefaultTableModel)tablaObje.getModel();
-        Departamento dep=new Departamento();
         logicaDepartamento logDep= new logicaDepartamento();
-        
-        dep=logDep.buscar(Integer.parseInt(idDep.getText()));
+        Departamento dep= logDep.buscar(Integer.parseInt(idDep.getText()));
                
-        Set<Objdepartamento> objDep=new HashSet<>();
+        Set<Objdepartamento> objDep=dep.getObjdepartamentos();
         Set<Objdepartamento> objDepEliminar=new HashSet<>();
-        objDep=dep.getObjdepartamentos();
         Objdepartamento obj=new Objdepartamento();
         int i=tablaObje.getSelectedRow();
         obj.setDescripcion(String.valueOf(modOb.getValueAt(tablaObje.getSelectedRow(),1)));
@@ -393,7 +377,7 @@ public class ModificarDepartament extends javax.swing.JFrame {
         } 
         
         modOb.removeRow(i);
-       objDep.removeAll(objDepEliminar);
+        objDep.removeAll(objDepEliminar);
         System.out.println(objDep.size());
         logDep.actualizar(dep);      
     }//GEN-LAST:event_eliminarObjetivoActionPerformed
@@ -414,19 +398,16 @@ public class ModificarDepartament extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ModificarDepartament.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ModificarDepartament.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ModificarDepartament.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ModificarDepartament.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new ModificarDepartament().setVisible(true);
             }
