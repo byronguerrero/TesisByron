@@ -297,7 +297,6 @@ public class ModificarDepartament extends javax.swing.JFrame {
             modOb.addRow(new Object[]{comboTipoObjetivo.getSelectedItem().toString(),objetivoDep.getText()});   
             depart=logDep.buscar(Integer.parseInt(idDep.getText()));
             Set<Objdepartamento> objDep;
-            s1.add(null);
 
             try{
                 objDep=depart.getObjdepartamentos(); 

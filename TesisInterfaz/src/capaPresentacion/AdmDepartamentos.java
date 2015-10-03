@@ -234,7 +234,7 @@ public class AdmDepartamentos extends javax.swing.JPanel {
             tablaDepart.addRow(fila);
         }
     }
-    
+
     private void modicarDepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modicarDepartamentoActionPerformed
         // TODO add your handling code here:   
         tablaDepart=(DefaultTableModel)tablaDepartamento.getModel();
